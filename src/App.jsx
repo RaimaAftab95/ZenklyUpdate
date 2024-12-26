@@ -1,15 +1,10 @@
-import './App.css';
+import Signup from './pages/Signup';
+import 'font-awesome/css/font-awesome.min.css';
 
-function App() {
+export default function App() {
   return (
-    <>
-      <div className="flex min-h-screen items-center justify-center bg-gray-100">
-        <h1 className="text-4xl font-bold text-blue-500">
-          Tailwind CSS is working!
-        </h1>
-      </div>
-    </>
+    <div className="min-h-screen bg-[#fff6ed]">
+      <Signup />
+    </div>
   );
 }
-
-export default App;

@@ -2,71 +2,125 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+html,
 body {
+  height: 100%;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@font-face {
+  font-family: 'mluvka';
+  src: url('/fonts/mluvka/regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@font-face {
+  font-family: 'nohemi';
+  src:
+    url('/fonts/nohemi/regular.otf') format('opentype'),
+    url('/fonts/nohemi/regular.woff') format('woff'),
+    url('/fonts/nohemi/regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer utilities {
+  .top-30\/30 {
+    top: 100%;
   }
-  a:hover {
-    color: #747bff;
+  .top-29\/30 {
+    top: 96.6667%;
   }
-  button {
-    background-color: #f9f9f9;
+  .top-28\/30 {
+    top: 93.3333%;
+  }
+  .top-27\/30 {
+    top: 90%;
+  }
+  .top-26\/30 {
+    top: 86.6667%;
+  }
+  .top-25\/30 {
+    top: 83.3333%;
+  }
+  .top-24\/30 {
+    top: 80%;
+  }
+  .top-23\/30 {
+    top: 76.6667%;
+  }
+  .top-22\/30 {
+    top: 73.3333%;
+  }
+  .top-21\/30 {
+    top: 70%;
+  }
+  .top-20\/30 {
+    top: 66.6667%;
+  }
+  .top-19\/30 {
+    top: 63.3333%;
+  }
+  .top-18\/30 {
+    top: 60%;
+  }
+  .top-17\/30 {
+    top: 56.6667%;
+  }
+  .top-16\/30 {
+    top: 53.3333%;
+  }
+  .top-15\/30 {
+    top: 50%;
+  }
+  .top-14\/30 {
+    top: 46.6667%;
+  }
+  .top-13\/30 {
+    top: 43.3333%;
+  }
+  .top-12\/30 {
+    top: 40%;
+  }
+  .top-11\/30 {
+    top: 36.6667%;
+  }
+  .top-10\/30 {
+    top: 33.3333%;
+  }
+  .top-9\/30 {
+    top: 30%;
+  }
+  .top-8\/30 {
+    top: 26.6667%;
+  }
+  .top-7\/30 {
+    top: 23.3333%;
+  }
+  .top-6\/30 {
+    top: 20%;
+  }
+  .top-5\/30 {
+    top: 16.6667%;
+  }
+  .top-4\/30 {
+    top: 13.3333%;
+  }
+  .top-3\/30 {
+    top: 10%;
+  }
+  .top-2\/30 {
+    top: 6.6667%;
+  }
+  .top-1\/30 {
+    top: 3.3333%;
   }
 }
