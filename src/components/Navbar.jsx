@@ -28,10 +28,8 @@ export default function Navbar() {
       <div className="md:hidden">
         <button onClick={toggleMenu}>
           {isMenuOpen ? (
-            <i className="fas fa-bars text-2xl text-[#BA5914]"></i>
+            <i className="fas fa-times text-2xl text-[#BA5914]"></i>
           ) : (
-            // <i className="fas fa-xmark text-2xl text-[#BA5914]"></i>
-            //<i clasNames="fa fa-circle-xmark text-2xl text-[#BA5914]"></i>
             <i className="fas fa-bars text-2xl text-[#BA5914]"></i>
           )}
         </button>

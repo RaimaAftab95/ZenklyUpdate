@@ -4,7 +4,6 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
           <div className="space-y-6 lg:w-1/4">
-            {/* Logo */}
             <div>
               <img src="/logo.png" alt="Logo" className="h-10" />
             </div>
