@@ -33,6 +33,42 @@ body {
 }
 
 @layer utilities {
+  /* navbar */
+  .navlinks-graytext {
+    color: #c6c1b7;
+  }
+
+  .navlinks-graytext:hover {
+    color: #ba5914;
+  }
+
+  /* signup page */
+  .darkbrown-text {
+    color: #ba5914;
+  }
+  .border-darkbrown {
+    border-color: #ba5914;
+  }
+
+  .darkbrown-text:hover {
+    color: #8a3f10;
+  }
+
+  .bg-darkbrown:hover {
+    background-color: #8a3f10;
+  }
+
+  /* createproject page */
+  .darkbrown-bg {
+    background-color: #7d2d12;
+  }
+  .darkbrown-bg:hover {
+    background-color: #ba5914;
+  }
+  .text-darkshade {
+    color: #7d2d12;
+  }
+
   .top-30\/30 {
     top: 100%;
   }

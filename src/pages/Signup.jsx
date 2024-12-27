@@ -25,7 +25,7 @@ export default function Signup() {
   };
 
   return (
-    <div className="bg-[#fff6ed] p-10">
+    <div className="min-h-screen bg-lightbg p-10">
       <Navbar />
 
       <div className="flex flex-col items-center justify-center gap-8 py-12 lg:flex-row lg:items-stretch">

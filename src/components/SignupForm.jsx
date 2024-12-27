@@ -4,10 +4,10 @@ import SocialSignupButtons from './SocialSignupButtons';
 export default function SignupForm({ formData, handleChange, handleSubmit }) {
   return (
     <div className="w-full max-w-sm flex-1 rounded-lg bg-white p-8 shadow-lg">
-      <h2 className="mb-6 text-center text-3xl font-semibold text-[#BA5914]">
+      <h2 className="darkbrown-text mb-6 text-center text-xl font-semibold">
         Sign Up
       </h2>
-      <h6 className="text-center">Time to automate your SEO with AI</h6>
+      <h6 className="text-center text-sm">Time to automate your SEO with AI</h6>
       <form onSubmit={handleSubmit}>
         <div className="mb-4 mt-5">
           <input
@@ -16,7 +16,7 @@ export default function SignupForm({ formData, handleChange, handleSubmit }) {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-4 py-2"
+            className="w-full rounded-md border border-gray-300 px-4 py-2 text-xs"
             placeholder="Email"
           />
         </div>
@@ -28,7 +28,7 @@ export default function SignupForm({ formData, handleChange, handleSubmit }) {
             name="password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-4 py-2"
+            className="w-full rounded-md border border-gray-300 px-4 py-2 text-xs"
             placeholder="Password"
           />
         </div>
@@ -40,17 +40,17 @@ export default function SignupForm({ formData, handleChange, handleSubmit }) {
             name="agreedToTerms"
             checked={formData.agreedToTerms}
             onChange={handleChange}
-            className="mr-2"
+            className="mr-2 text-xs"
           />
-          <label htmlFor="agreedToTerms" className="text-gray-700">
+          <label htmlFor="agreedToTerms" className="text-xs text-gray-700">
             I agree to the{' '}
-            <a href="/terms" className="text-[#BA5914] hover:underline">
+            <a href="/terms" className="darkbrown-text text-xs hover:underline">
               Terms of Service
             </a>{' '}
             and{' '}
             <a
               href="/privacy-policy"
-              className="text-[#BA5914] hover:underline"
+              className="text-darkbrown-text text-xs hover:underline"
             >
               Privacy Policy
             </a>
@@ -59,7 +59,7 @@ export default function SignupForm({ formData, handleChange, handleSubmit }) {
 
         <button
           type="submit"
-          className="w-full rounded-md bg-[#BA5914] py-2 text-white hover:bg-[#9a4612]"
+          className="w-full rounded-md bg-darkbrown py-2 text-xs text-white hover:bg-darkestbrown"
           disabled={!formData.agreedToTerms}
         >
           Sign Up

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full rounded-t-2xl bg-[#ffedd5] px-6 py-10 text-[#BA5914]">
+    <footer className="darkbrown-text w-full rounded-t-2xl bg-darkbg px-6 py-10">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
           <div className="space-y-6 lg:w-1/4">
@@ -11,19 +11,19 @@ export default function Footer() {
             <p className="text-sm">Automate your blog with AI</p>
 
             <div className="flex gap-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#BA5914] text-white transition-colors hover:bg-[#8A3F10]">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-darkbrown text-white transition-colors">
                 <i className="fab fa-facebook-f"></i>
               </div>
 
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#BA5914] text-white transition-colors hover:bg-[#8A3F10]">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-darkbrown text-white transition-colors">
                 <i className="fab fa-twitter"></i>
               </div>
 
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#BA5914] text-white transition-colors hover:bg-[#8A3F10]">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-darkbrown text-white transition-colors">
                 <i className="fab fa-instagram"></i>
               </div>
 
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#BA5914] text-white transition-colors hover:bg-[#8A3F10]">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-darkbrown text-white transition-colors">
                 <i className="fab fa-linkedin"></i>
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function Footer() {
                     <li key={idx}>
                       <a
                         href="#"
-                        className="text-sm text-[#BA5914] hover:text-[#8A3F10] hover:underline"
+                        className="darkbrown-text text-sm text-darkbrown hover:underline"
                       >
                         {link}
                       </a>
@@ -73,7 +73,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <hr className="mx-0 my-6 w-full border-[#BA5914]" />
+        <hr className="mx-0 my-6 w-full border-darkbrown" />
 
         <div className="text-center text-sm">
           &copy; 2020. All rights reserved.
