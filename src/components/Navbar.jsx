@@ -47,7 +47,7 @@ export default function Navbar() {
           <a href="/login" className="navlinks-graytext block">
             Login
           </a>
-          <button className="bg- darkbrown block w-full rounded-full px-4 py-2 text-white">
+          <button className="block w-full rounded-full bg-darkbrown px-4 py-2 text-white">
             Sign Up
           </button>
         </div>
