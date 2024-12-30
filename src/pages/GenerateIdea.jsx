@@ -23,16 +23,16 @@ export default function GenerateIdea() {
 
           {/* Menu Items */}
           <nav className="space-y-4">
-            <div className="flex items-center space-x-3">
+            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-darkbg">
               <i className="fas fa-bahai text-darkshade"></i>
               <span>Generate Ideas</span>
             </div>
-            <div className="text-darkshade flex items-center space-x-3">
-              <i className="fas fa-bookmark"></i>
+            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-darkbg">
+              <i className="fas fa-bookmark text-darkshade"></i>
               <span>Saved Ideas</span>
             </div>
-            <div className="text-darkshade flex items-center space-x-3">
-              <i className="fas fa-circle-up"></i>
+            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-darkbg">
+              <i className="fas fa-circle-up text-darkshade"></i>
               <span>Upgrade Account</span>
             </div>
           </nav>
@@ -42,12 +42,12 @@ export default function GenerateIdea() {
         <div>
           <hr className="my-4 border-gray-500" />
           <nav className="space-y-4">
-            <div className="text-darkshade flex items-center space-x-3">
-              <i className="far fa-circle-question"></i>
+            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-darkbg">
+              <i className="far fa-circle-question text-darkshade"></i>
               <span>Need Help?</span>
             </div>
-            <div className="text-darkshade flex items-center space-x-3">
-              <i className="fas fa-right-to-bracket"></i>
+            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-darkbg">
+              <i className="fas fa-right-to-bracket text-darkshade"></i>
               <span>Sign Out</span>
             </div>
           </nav>
@@ -60,11 +60,12 @@ export default function GenerateIdea() {
         <h1 className="text-darkshade mb-6 text-left text-3xl font-bold">
           Generate Ideas
         </h1>
+
         {/* Main Content Box */}
-        <div className="">
-          <div className="w-full max-w-lg rounded-lg bg-white p-6 text-center shadow-lg">
-            <div className="text-darkshade mb-4">
-              <i className="fa-solid fa-file-import mb-3 text-4xl"></i>
+        <div>
+          <div className="w-full max-w-3xl rounded-lg bg-white p-10 text-center shadow-lg">
+            <div className="text-darkshade mb-6">
+              <i className="fa-solid fa-file-import mb-4 text-6xl"></i>
               <p className="text-darkshade text-lg font-bold">
                 Please wait while we are fetching your blog posts....
               </p>
