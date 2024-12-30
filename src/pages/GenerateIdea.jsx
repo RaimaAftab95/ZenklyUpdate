@@ -1,64 +1,80 @@
 export default function GenerateIdea() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-lightbg p-10">
-      <div className="mb-6 flex w-full justify-start">
-        <img src="/images/logo.png" alt="Logo" className="h-16 w-16" />
-      </div>
+    <div className="flex min-h-screen bg-lightbg">
+      {/* Sidebar */}
+      <aside className="bg-darkshade text-darkshade flex w-60 flex-col justify-between p-4">
+        {/* Top Section */}
+        <div className="space-y-6">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
+            <img src="/images/logo.png" alt="Logo" className="h-8 w-8" />
+            <span className="text-lg font-bold">Logo</span>
+          </div>
 
-      <h1 className="text-darkshade mb-2 text-center text-xl font-bold">
-        Generate Ideas
-      </h1>
-      <p className="text-darkshade mb-6 text-center text-sm">
-        Connect your blog to get started
-      </p>
-
-      <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-lg">
-        <p className="mb-4 text-xs font-medium text-gray-700">
-          Choose your blog platform
-        </p>
-        <div className="mb-6 flex gap-4">
-          <div className="flex w-full items-center gap-2 rounded-lg border border-gray-300 p-3">
+          {/* Dropdown */}
+          <div className="flex items-center space-x-3">
             <img
-              src="/images/wordpresslogo.png"
-              alt="WordPress"
+              src="/images/icon.png"
+              alt="Dropdown Icon"
               className="h-6 w-6"
             />
-            <span className="text-sm font-medium text-gray-700">WordPress</span>
+            <span className="font-bold text-black">Content Drips</span>
           </div>
-          <div className="flex w-full items-center gap-2 rounded-lg border border-gray-300 p-3">
-            <img
-              src="/images/wordpresslogo.png"
-              alt="WordPress"
-              className="h-6 w-6"
-            />
-            <span className="text-sm font-medium text-gray-700">WordPress</span>
-          </div>
+
+          {/* Menu Items */}
+          <nav className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <i className="fas fa-bahai text-darkshade"></i>
+              <span>Generate Ideas</span>
+            </div>
+            <div className="text-darkshade flex items-center space-x-3">
+              <i className="fas fa-bookmark"></i>
+              <span>Saved Ideas</span>
+            </div>
+            <div className="text-darkshade flex items-center space-x-3">
+              <i className="fas fa-circle-up"></i>
+              <span>Upgrade Account</span>
+            </div>
+          </nav>
         </div>
 
-        <p className="mb-2 text-xs font-medium text-gray-700">
-          Type your blog URL
-        </p>
-        <input
-          type="text"
-          placeholder="Enter your blog URL"
-          className="mb-6 w-full rounded-lg border border-gray-300 p-3 text-xs shadow-sm focus:border-blue-500 focus:ring-blue-500"
-        />
-
-        <div className="flex justify-between">
-          <button
-            type="button"
-            className="darkbrown-bg rounded-lg px-4 py-2 text-white"
-          >
-            Skip
-          </button>
-          <button
-            type="submit"
-            className="darkbrown-bg rounded-lg px-4 py-2 text-white"
-          >
-            Proceed
-          </button>
+        {/* Bottom Section */}
+        <div>
+          <hr className="my-4 border-gray-500" />
+          <nav className="space-y-4">
+            <div className="text-darkshade flex items-center space-x-3">
+              <i className="far fa-circle-question"></i>
+              <span>Need Help?</span>
+            </div>
+            <div className="text-darkshade flex items-center space-x-3">
+              <i className="fas fa-right-to-bracket"></i>
+              <span>Sign Out</span>
+            </div>
+          </nav>
         </div>
-      </div>
+      </aside>
+
+      {/* Main Content */}
+      <main className="flex-1 p-5">
+        {/* Heading */}
+        <h1 className="text-darkshade mb-6 text-left text-3xl font-bold">
+          Generate Ideas
+        </h1>
+        {/* Main Content Box */}
+        <div className="">
+          <div className="w-full max-w-lg rounded-lg bg-white p-6 text-center shadow-lg">
+            <div className="text-darkshade mb-4">
+              <i className="fa-solid fa-file-import mb-3 text-4xl"></i>
+              <p className="text-darkshade text-lg font-bold">
+                Please wait while we are fetching your blog posts....
+              </p>
+            </div>
+            <p className="text-darkshade text-sm">
+              This may take a few seconds.
+            </p>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
