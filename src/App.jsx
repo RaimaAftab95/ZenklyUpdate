@@ -1,39 +1,16 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Signup from './pages/Signup';
+import CreateProject from './pages/CreateProject';
+import 'font-awesome/css/font-awesome.min.css';
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function App() {
   return (
-    <>
-      <div className="flex justify-center space-x-4">
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className="mt-4 text-4xl font-bold">Vite + React</h1>
-      <div className="card rounded-lg bg-gray-100 p-4 shadow-md">
-        <button
-          className="rounded bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-600"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          count is {count}
-        </button>
-        <p className="mt-2 text-gray-700">
-          Edit <code className="rounded bg-gray-200 p-1">src/App.jsx</code> and
-          save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs mt-4 text-sm text-gray-500">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/create-project" element={<CreateProject />} />
+        <Route path="*" element={<Navigate to="/signup" />} />
+      </Routes>
+    </div>
   );
 }
-
-export default App;
