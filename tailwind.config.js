@@ -4,10 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        lightbg: '#fff6ed',
-        darkbg: '#ffedd5',
-        darkbrown: '#BA5914',
-        darkestbrown: '#9a4612'
+        primary: {
+          DEFAULT: '#BA5914',
+          light: '#ffedd5',
+          dark: '#8a3f10'
+        },
+        secondary: {
+          DEFAULT: '#7d2d12',
+          light: '#fff6ed'
+        },
+        graytext: '#c6c1b7'
       }
     }
   },

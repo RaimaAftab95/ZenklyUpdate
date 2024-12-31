@@ -4,7 +4,7 @@ import SocialSignupButtons from './SocialSignupButtons';
 export default function SignupForm({ formData, handleChange, handleSubmit }) {
   return (
     <div className="w-full max-w-sm flex-1 rounded-lg bg-white p-8 shadow-lg">
-      <h2 className="darkbrown-text mb-6 text-center text-xl font-semibold">
+      <h2 className="mb-6 text-center text-xl font-semibold text-primary hover:text-primary-dark">
         Sign Up
       </h2>
       <h6 className="text-center text-sm">Time to automate your SEO with AI</h6>
@@ -44,13 +44,16 @@ export default function SignupForm({ formData, handleChange, handleSubmit }) {
           />
           <label htmlFor="agreedToTerms" className="text-xs text-gray-700">
             I agree to the{' '}
-            <a href="/terms" className="darkbrown-text text-xs hover:underline">
+            <a
+              href="/terms"
+              className="text-xs text-primary hover:text-primary-dark hover:underline"
+            >
               Terms of Service
             </a>{' '}
             and{' '}
             <a
               href="/privacy-policy"
-              className="text-darkbrown-text text-xs hover:underline"
+              className="text-xs text-primary hover:text-primary-dark hover:underline"
             >
               Privacy Policy
             </a>
@@ -59,7 +62,7 @@ export default function SignupForm({ formData, handleChange, handleSubmit }) {
 
         <button
           type="submit"
-          className="w-full rounded-md bg-darkbrown py-2 text-xs text-white hover:bg-darkestbrown"
+          className="hover:bg-darkestbrown w-full rounded-md bg-primary py-2 text-xs text-white hover:bg-primary-dark"
           disabled={!formData.agreedToTerms}
         >
           Sign Up

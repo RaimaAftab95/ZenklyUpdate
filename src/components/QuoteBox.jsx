@@ -1,11 +1,11 @@
 export default function QuoteBox() {
   return (
-    <div className="flex w-full max-w-xs flex-1 flex-col justify-between rounded-lg bg-darkbg p-8 shadow-lg">
+    <div className="flex w-full max-w-xs flex-1 flex-col justify-between rounded-lg bg-primary-light p-8 shadow-lg">
       <div>
-        <div className="darkbrown-text text-xl">
+        <div className="text-xl text-primary">
           <i className="fas fa-quote-right"></i>
         </div>
-        <h3 className="darkbrown-text mb-4 text-xl font-semibold">
+        <h3 className="mb-4 text-xl font-semibold text-primary">
           Most useful for product research
         </h3>
         <p className="text-sm text-gray-700">

@@ -2,52 +2,63 @@ import { useState } from 'react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <nav className="mx-auto flex w-11/12 max-w-4xl items-center justify-between rounded-full bg-darkbg p-3">
-      <div className="darkbrown-text text-lg font-bold">Logo</div>
+    <nav className="relative mx-auto flex w-11/12 max-w-4xl items-center justify-between rounded-full bg-primary-light p-3">
+      <div className="text-lg font-bold text-primary hover:text-primary-dark">
+        Logo
+      </div>
 
       <div className="hidden space-x-6 md:flex">
-        <a href="/" className="navlinks-graytext">
+        <a href="/" className="text-graytext hover:text-primary">
           Home
         </a>
-        <a href="/features" className="navlinks-graytext">
+        <a href="/features" className="text-graytext hover:text-primary">
           Features
         </a>
-        <a href="/login" className="navlinks-graytext">
+        <a href="/login" className="text-graytext hover:text-primary">
           Login
         </a>
-        <button className="rounded-full bg-darkbrown px-4 py-2 text-white">
+        <button className="rounded-full bg-primary px-4 py-2 text-white hover:bg-primary-dark">
           Sign Up
         </button>
       </div>
 
       {/* Mobile menu icon */}
       <div className="md:hidden">
-        <button onClick={toggleMenu}>
+        <button
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+        >
           {isMenuOpen ? (
-            <i className="fas fa-times darkbrown-text text-2xl"></i>
+            <i className="fas fa-times text-2xl text-primary hover:text-primary-dark"></i>
           ) : (
-            <i className="fas fa-bars darkbrown-text text-2xl"></i>
+            <i className="fas fa-bars text-2xl text-primary hover:text-primary-dark"></i>
           )}
         </button>
       </div>
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="absolute left-0 top-20 w-full bg-darkbg p-6 md:hidden">
-          <a href="/" className="navlinks-graytext block">
+        <div className="absolute left-0 top-20 w-full bg-secondary-light p-6 md:hidden">
+          <a href="/" className="block py-2 text-graytext hover:text-primary">
             Home
           </a>
-          <a href="/features" className="navlinks-graytext block">
+          <a
+            href="/features"
+            className="block py-2 text-graytext hover:text-primary"
+          >
             Features
           </a>
-          <a href="/login" className="navlinks-graytext block">
+          <a
+            href="/login"
+            className="block py-2 text-graytext hover:text-primary"
+          >
             Login
           </a>
-          <button className="block w-full rounded-full bg-darkbrown px-4 py-2 text-white">
+
+          <button className="mt-4 block w-full rounded-full bg-primary px-4 py-2 text-white hover:bg-primary-dark">
             Sign Up
           </button>
         </div>
