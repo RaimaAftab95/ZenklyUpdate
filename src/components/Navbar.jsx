@@ -57,7 +57,6 @@ export default function Navbar() {
           >
             Login
           </a>
-
           <button className="mt-4 block w-full rounded-full bg-primary px-4 py-2 text-white hover:bg-primary-dark">
             Sign Up
           </button>

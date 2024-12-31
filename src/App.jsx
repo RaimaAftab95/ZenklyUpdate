@@ -12,7 +12,6 @@ export default function App() {
         <Route path="/create-project" element={<CreateProject />} />
         <Route path="/generate-idea" element={<GenerateIdea />} />
         <Route path="*" element={<Navigate to="/signup" />} />
-        <Route path="/generate-project" element={<CreateProject />} />
       </Routes>
     </div>
   );
