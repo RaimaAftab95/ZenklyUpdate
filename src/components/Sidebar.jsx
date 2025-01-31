@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import ProgressBox from '../components/ProgressBox';
 
 export default function Sidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -6,6 +8,9 @@ export default function Sidebar() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+
+  const progress = 20;
+  const location = useLocation();
 
   return (
     <>
@@ -29,9 +34,7 @@ export default function Sidebar() {
             : '-translate-x-full bg-secondary-light'
         } fixed left-0 top-0 z-40 h-full w-60 transform text-primary transition-transform duration-300 md:relative md:block md:translate-x-0 md:bg-secondary-light`}
       >
-        {/* Top Section */}
         <div className="space-y-6 p-4">
-          {/* Logo */}
           <div className="flex items-center space-x-3">
             <img src="/images/logo.png" alt="Logo" className="h-8 w-8" />
             <span className="text-lg font-bold">Logo</span>
@@ -85,6 +88,10 @@ export default function Sidebar() {
             </div>
           </nav>
         </div>
+
+        {location.pathname !== '/generate-idea' && (
+          <ProgressBox progress={progress} />
+        )}
 
         {/* Bottom Section */}
         <div className="p-4">
