@@ -5,7 +5,7 @@ export default function SignupForm({ formData, handleChange, handleSubmit }) {
   return (
     <div className="w-full max-w-sm flex-1 rounded-lg bg-white p-8 shadow-lg">
       <h2 className="mb-6 text-center text-xl font-semibold text-primary hover:text-primary-dark">
-        Sign Up Zenkly
+        Sign Up
       </h2>
       <h6 className="text-center text-sm">Time to automate your SEO with AI</h6>
       <form onSubmit={handleSubmit}>
