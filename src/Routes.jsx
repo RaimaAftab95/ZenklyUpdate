@@ -4,9 +4,6 @@ import CreateProject from './pages/CreateProject';
 import GenerateIdea from './pages/GenerateIdea';
 import GenerateIdeaChooseBlogs from './pages/GenerateIdeaChooseBlogs';
 
-import SavedIdeas from './pages/SavedIdeas';
-import UpgradeAccount from './pages/UpgradeAccount';
-
 export default function AppRoutes() {
   return (
     <Routes>
@@ -17,10 +14,6 @@ export default function AppRoutes() {
         path="/generate-idea-choose-blogs"
         element={<GenerateIdeaChooseBlogs />}
       />
-
-      <Route path="/saved-ideas" element={<SavedIdeas />} />
-      <Route path="/upgrade-account" element={<UpgradeAccount />} />
-
       <Route path="*" element={<Navigate to="/signup" />} />
     </Routes>
   );
