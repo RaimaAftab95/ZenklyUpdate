@@ -14,7 +14,7 @@ export default {
           light: '#fff6ed',
           dark: '#fcbf80'
         },
-        graytext: '#c6c1b7'
+        graytext: '#958F80'
       }
     }
   },
