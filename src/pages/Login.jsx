@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import SignupForm from '../components/SignupForm';
+import LoginForm from '../components/LoginForm';
 import QuoteBox from '../components/QuoteBox';
 
-export default function Signup() {
+export default function Login() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
     email: '',
     password: '',
     agreedToTerms: false
@@ -31,7 +29,7 @@ export default function Signup() {
       <Navbar />
 
       <div className="flex flex-col items-center justify-center gap-8 py-12 lg:flex-row lg:items-stretch">
-        <SignupForm
+        <LoginForm
           formData={formData}
           handleChange={handleChange}
           handleSubmit={handleSubmit}

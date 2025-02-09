@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import SocialSignupButtons from './SocialSignupButtons';
 import { useNavigate } from 'react-router-dom';
-import { useRegister } from '../hooks/useRegister';
+import { useLogin } from '../hooks/useLogin';
 import toast from 'react-hot-toast';
 
-export default function SignupForm({ formData, handleChange }) {
-  const { firstName, lastName, email, password } = formData;
-  const { register, isLoading, error } = useRegister();
+export default function LoginForm({ formData, handleChange }) {
+  const { email, password } = formData;
+  const { login, isLoading, error } = useLogin();
   const navigate = useNavigate();
 
   /**
@@ -17,19 +17,11 @@ export default function SignupForm({ formData, handleChange }) {
   async function handleFormSubmit(e) {
     e.preventDefault();
 
-    await toast.promise(
-      register({
-        firstName,
-        lastName,
-        email,
-        password
-      }),
-      {
-        loading: 'Creating account...',
-        success: 'Account created successfully!',
-        error: 'Failed to create account. Please try again!'
-      }
-    );
+    await toast.promise(login({ email, password }), {
+      loading: 'Loading...',
+      success: 'Login successful!',
+      error: 'Login failed. Please try again!'
+    });
 
     navigate('/create-project');
   }
@@ -37,33 +29,10 @@ export default function SignupForm({ formData, handleChange }) {
   return (
     <div className="w-full max-w-sm flex-1 rounded-lg bg-white p-8 shadow-lg">
       <h2 className="mb-6 text-center text-xl font-semibold text-primary hover:text-primary-dark">
-        Sign Up
+        Login
       </h2>
       <h6 className="text-center text-sm">Time to automate your SEO with AI</h6>
       <form onSubmit={handleFormSubmit}>
-        <div className="mb-4 mt-5">
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            value={formData.firstName || ''}
-            onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-4 py-2 text-xs"
-            placeholder="First Name"
-          />
-        </div>
-
-        <div className="mb-4">
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName || ''}
-            onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-4 py-2 text-xs"
-            placeholder="Last Name"
-          />
-        </div>
         <div className="mb-4 mt-5">
           <input
             type="email"
@@ -120,7 +89,7 @@ export default function SignupForm({ formData, handleChange }) {
           className="hover:bg-darkestbrown w-full rounded-md bg-primary py-2 text-xs text-white hover:bg-primary-dark"
           disabled={!formData.agreedToTerms}
         >
-          {isLoading ? 'Signing Up...' : 'Sign Up'}
+          {isLoading ? 'Loging In...' : 'Login'}
         </button>
 
         {/* Error Message */}
@@ -135,10 +104,8 @@ export default function SignupForm({ formData, handleChange }) {
 }
 
 // Define propTypes for validation
-SignupForm.propTypes = {
+LoginForm.propTypes = {
   formData: PropTypes.shape({
-    firstName: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
     agreedToTerms: PropTypes.bool.isRequired
