@@ -37,12 +37,12 @@ export default function Sidebar() {
         <div className="space-y-6 p-4">
           <div className="flex items-center space-x-3">
             <img src="/images/logo.png" alt="Logo" className="h-8 w-8" />
-            <span className="text-lg font-bold">Logo</span>
+            {/* <span className="text-lg font-bold">Logo</span> */}
           </div>
 
-          <div className="relative">
+          <div className="relative text-black">
             <button
-              className="flex cursor-pointer items-center space-x-3 rounded-lg border-none bg-white p-2 font-bold text-primary focus:outline-none"
+              className="flex cursor-pointer items-center space-x-3 rounded-lg border-none bg-white p-2 text-xs focus:outline-none"
               onClick={toggleDropdown}
             >
               <img
@@ -58,14 +58,14 @@ export default function Sidebar() {
               ></i>
             </button>
             {isDropdownOpen && (
-              <div className="mt-2 space-y-2 rounded-md bg-secondary-light p-2 shadow-lg">
-                <div className="cursor-pointer px-4 py-2 hover:bg-primary-light">
+              <div className="mt-2 space-y-2 rounded-md bg-secondary-light p-2 text-xs shadow-lg">
+                <div className="cursor-pointer px-2 py-2 hover:bg-primary-light">
                   Option 1
                 </div>
-                <div className="cursor-pointer px-4 py-2 hover:bg-primary-light">
+                <div className="cursor-pointer px-2 py-2 hover:bg-primary-light">
                   Option 2
                 </div>
-                <div className="cursor-pointer px-4 py-2 hover:bg-primary-light">
+                <div className="cursor-pointer px-2 py-2 hover:bg-primary-light">
                   Option 3
                 </div>
               </div>
@@ -73,17 +73,17 @@ export default function Sidebar() {
           </div>
 
           {/* Menu Items */}
-          <nav className="space-y-4">
+          <nav className="text-sm text-primary-dark">
             <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
-              <i className="fas fa-bahai text-primary"></i>
+              <i className="fas fa-bahai"></i>
               <span>Generate Ideas</span>
             </div>
             <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
-              <i className="fas fa-bookmark text-primary"></i>
+              <i className="fas fa-bookmark"></i>
               <span>Saved Ideas</span>
             </div>
             <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
-              <i className="fas fa-circle-up text-primary"></i>
+              <i className="fas fa-circle-up"></i>
               <span>Upgrade Account</span>
             </div>
           </nav>
@@ -95,14 +95,18 @@ export default function Sidebar() {
 
         {/* Bottom Section */}
         <div className="p-4">
-          <hr className="my-4 border-gray-500" />
-          <nav className="space-y-4">
+          <hr className="my-4 w-1/2 border-secondary-lighter" />
+          <nav className="text-sm text-primary-dark">
             <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
-              <i className="far fa-circle-question text-primary"></i>
+              <i className="far fa-circle-question"></i>
               <span>Need Help?</span>
             </div>
             <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
-              <i className="fas fa-right-to-bracket text-primary"></i>
+              <i className="fa-solid fa-user"></i>
+              <span>Account Settings</span>
+            </div>
+            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
+              <i className="fas fa-right-to-bracket"></i>
               <span>Sign Out</span>
             </div>
           </nav>

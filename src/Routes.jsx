@@ -5,7 +5,10 @@ import GenerateIdea from './pages/GenerateIdea';
 import GenerateIdeaChooseBlogs from './pages/GenerateIdeaChooseBlogs';
 import SavedIdeas from './pages/SavedIdeas';
 import UpgradeAccount from './pages/UpgradeAccount';
+
+import AccountSettings from './pages/AccountSettings';
 import Login from './pages/Login';
+
 
 export default function AppRoutes() {
   return (
@@ -20,8 +23,11 @@ export default function AppRoutes() {
           element={<GenerateIdeaChooseBlogs />}
         />
 
-        <Route path="/saved-ideas" element={<SavedIdeas />} />
-        <Route path="/upgrade-account" element={<UpgradeAccount />} />
+
+      <Route path="/saved-ideas" element={<SavedIdeas />} />
+      <Route path="/upgrade-account" element={<UpgradeAccount />} />
+      <Route path="/account-settings" element={<AccountSettings />} />
+
 
         <Route path="*" element={<Navigate to="/signup" />} />
       </Routes>
