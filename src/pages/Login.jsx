@@ -1,43 +1,21 @@
-import { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import LoginForm from '../components/LoginForm';
-import QuoteBox from '../components/QuoteBox';
+import LoginForm from '@components/LoginForm';
+import QuoteBox from '@components/QuoteBox';
+
+import Navbar from '@components/Navbar';
+import Footer from '@components/Footer';
 
 export default function Login() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    agreedToTerms: false
-  });
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: type === 'checkbox' ? checked : value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form Submitted', formData);
-  };
-
   return (
-    <div className="min-h-screen bg-secondary-light p-10">
+    <>
       <Navbar />
 
-      <div className="flex flex-col items-center justify-center gap-8 py-12 lg:flex-row lg:items-stretch">
-        <LoginForm
-          formData={formData}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-        />
+      <div className="my-20 flex flex-col items-center justify-center gap-4 lg:flex-row lg:items-stretch">
+        <LoginForm />
+
         <QuoteBox />
       </div>
 
       <Footer />
-    </div>
+    </>
   );
 }

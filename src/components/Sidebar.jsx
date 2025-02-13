@@ -1,6 +1,16 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import ProgressBox from '../components/ProgressBox';
+import {
+  BookmarkIcon,
+  SparklesIcon,
+  ArrowRightStartOnRectangleIcon,
+  QuestionMarkCircleIcon,
+  UserIcon,
+  ArrowUpCircleIcon,
+  Bars3Icon,
+  XMarkIcon
+} from '@heroicons/react/24/solid';
 
 export default function Sidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,13 +26,13 @@ export default function Sidebar() {
     <>
       {/* Hamburger Menu Button */}
       <button
-        className="absolute left-4 top-4 z-50 block md:hidden"
+        className="absolute top-4 left-4 z-50 block md:hidden"
         onClick={toggleMenu}
       >
         {isMenuOpen ? (
-          <i className="fas fa-times text-2xl text-primary"></i>
+          <XMarkIcon className="text-primary h-6 w-6" />
         ) : (
-          <i className="fas fa-bars text-2xl text-primary"></i>
+          <Bars3Icon className="text-primary h-6 w-6" />
         )}
       </button>
 
@@ -30,19 +40,19 @@ export default function Sidebar() {
       <aside
         className={`${
           isMenuOpen
-            ? 'translate-x-0 bg-primary-light'
-            : '-translate-x-full bg-secondary-light'
-        } fixed left-0 top-0 z-40 h-full w-60 transform text-primary transition-transform duration-300 md:relative md:block md:translate-x-0 md:bg-secondary-light`}
+            ? 'bg-base-100 translate-x-0'
+            : 'bg-secondary-light -translate-x-full'
+        } text-primary md:bg-secondary-light fixed top-0 left-0 z-40 h-full w-60 transform transition-transform duration-300 md:relative md:block md:translate-x-0`}
       >
         <div className="space-y-6 p-4">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-1">
             <img src="/images/logo.png" alt="Logo" className="h-8 w-8" />
-            {/* <span className="text-lg font-bold">Logo</span> */}
+            <span className="text-lg font-bold">Zenkly</span>
           </div>
 
           <div className="relative text-black">
             <button
-              className="flex cursor-pointer items-center space-x-3 rounded-lg border-none bg-white p-2 text-xs focus:outline-none"
+              className="flex cursor-pointer items-center space-x-3 rounded-lg border-none bg-white p-2 text-xs focus:outline-hidden"
               onClick={toggleDropdown}
             >
               <img
@@ -58,14 +68,14 @@ export default function Sidebar() {
               ></i>
             </button>
             {isDropdownOpen && (
-              <div className="mt-2 space-y-2 rounded-md bg-secondary-light p-2 text-xs shadow-lg">
-                <div className="cursor-pointer px-2 py-2 hover:bg-primary-light">
+              <div className="bg-secondary-light mt-2 space-y-2 rounded-md p-2 text-xs shadow-lg">
+                <div className="hover:bg-base-100 cursor-pointer px-2 py-2">
                   Option 1
                 </div>
-                <div className="cursor-pointer px-2 py-2 hover:bg-primary-light">
+                <div className="hover:bg-base-100 cursor-pointer px-2 py-2">
                   Option 2
                 </div>
-                <div className="cursor-pointer px-2 py-2 hover:bg-primary-light">
+                <div className="hover:bg-base-100 cursor-pointer px-2 py-2">
                   Option 3
                 </div>
               </div>
@@ -73,17 +83,17 @@ export default function Sidebar() {
           </div>
 
           {/* Menu Items */}
-          <nav className="text-sm text-primary-dark">
-            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
-              <i className="fas fa-bahai"></i>
+          <nav className="text-primary-dark text-sm">
+            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+              <SparklesIcon className="text-primary h-5 w-5" />
               <span>Generate Ideas</span>
             </div>
-            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
-              <i className="fas fa-bookmark"></i>
+            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+              <BookmarkIcon className="text-primary h-5 w-5" />
               <span>Saved Ideas</span>
             </div>
-            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
-              <i className="fas fa-circle-up"></i>
+            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+              <ArrowUpCircleIcon className="text-primary h-5 w-5" />
               <span>Upgrade Account</span>
             </div>
           </nav>
@@ -95,18 +105,18 @@ export default function Sidebar() {
 
         {/* Bottom Section */}
         <div className="p-4">
-          <hr className="my-4 w-1/2 border-secondary-lighter" />
-          <nav className="text-sm text-primary-dark">
-            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
-              <i className="far fa-circle-question"></i>
+          <hr className="border-secondary-lighter my-4 w-1/2" />
+          <nav className="text-primary-dark text-sm">
+            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+              <QuestionMarkCircleIcon className="text-primary h-5 w-5" />
               <span>Need Help?</span>
             </div>
-            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
-              <i className="fa-solid fa-user"></i>
+            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+              <UserIcon className="text-primary h-5 w-5" />
               <span>Account Settings</span>
             </div>
-            <div className="flex cursor-pointer items-center space-x-3 rounded-lg p-2 hover:bg-secondary-light sm:hover:bg-primary-light">
-              <i className="fas fa-right-to-bracket"></i>
+            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+              <ArrowRightStartOnRectangleIcon className="text-primary h-5 w-5" />
               <span>Sign Out</span>
             </div>
           </nav>

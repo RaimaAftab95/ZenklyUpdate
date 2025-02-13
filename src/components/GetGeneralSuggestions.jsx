@@ -17,14 +17,14 @@ export default function GetGeneralSuggestions() {
     <div className="mt-10">
       <button
         onClick={handleGetSuggestions}
-        className="w-auto cursor-pointer rounded-lg bg-secondary px-6 py-3 text-white hover:bg-primary-light hover:text-primary-dark"
+        className="bg-secondary hover:bg-primary-light hover:text-primary-dark w-auto cursor-pointer rounded-lg px-6 py-3 text-white"
       >
         Get General Suggestions
       </button>
 
       {generalSuggestions.length > 0 && (
         <div className="mt-8 space-y-4">
-          <h2 className="text-lg font-bold text-primary-dark">
+          <h2 className="text-primary-dark text-lg font-bold">
             General Suggestions
           </h2>
           <ul className="list-disc pl-6 text-left text-sm text-gray-700">

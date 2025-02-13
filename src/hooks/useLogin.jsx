@@ -1,47 +1,56 @@
-import { useAuthContext } from './useAuthContext';
+import { useAuthContext } from '@hooks/useAuthContext';
 import { useState } from 'react';
+
+import { APIError, ExceptionResolver } from '@utils/translate-api-errors';
 
 const { VITE_BACKEND_API } = import.meta.env;
 
 export function useLogin() {
-  const [isLoading, setIsLoading] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const { dispatch } = useAuthContext();
 
   /**
    * Perform a login request to the server
-   * @param {Object} param Parameters
-   * @param {string} param.email User email
-   * @param {string} param.password User password
-   * @returns {Promise<void>}
+   * @param {Object} params Parameters
+   * @param {string} params.email User email
+   * @param {string} params.password User password
    */
-  async function login({ email, password }) {
+  async function login(params) {
+    const { email, password } = params;
+
+    // Reset loading and error state
     setIsLoading(true);
     setError(null);
 
-    console.log('VITE_BACKEND_API:', VITE_BACKEND_API);
+    try {
+      const response = await fetch(`${VITE_BACKEND_API}/v1/auth/login`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
 
-    const response = await fetch(`${VITE_BACKEND_API}/v1/auth/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    });
+      const data = await response.json();
 
-    const data = await response.json();
-    console.log('API Response:', data);
+      if (!response.ok) {
+        throw new APIError(data.message, {
+          type: data.error,
+          message: data.message,
+          key: data.key
+        });
+      }
 
-    if (!response.ok || !data.user || !data.token) {
-      setIsLoading(false);
-      setError(data.message);
-      throw new Error();
-    }
-
-    if (response.ok) {
-      localStorage.setItem('user', JSON.stringify(data.user));
-      localStorage.setItem('token', JSON.stringify(data.token));
-
+      localStorage.setItem('token', data.token);
       dispatch({ type: 'LOGIN', payload: data });
+    } catch (error) {
+      const { resolved, message } = ExceptionResolver.resolve(error);
 
+      if (resolved) {
+        setError(message);
+      }
+
+      throw error;
+    } finally {
       setIsLoading(false);
     }
   }

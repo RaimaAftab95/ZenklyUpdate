@@ -1,148 +1,158 @@
-import PropTypes from 'prop-types';
-import SocialSignupButtons from './SocialSignupButtons';
 import { useNavigate } from 'react-router-dom';
-import { useRegister } from '../hooks/useRegister';
-import toast from 'react-hot-toast';
+import { useState } from 'react';
 
-export default function SignupForm({ formData, handleChange }) {
-  const { firstName, lastName, email, password } = formData;
+import { useRegister } from '@hooks/useRegister';
+
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
+
+export default function SignupForm() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [data, setData] = useState({
+    email: '',
+    password: ''
+  });
+
   const { register, isLoading, error } = useRegister();
   const navigate = useNavigate();
 
   /**
    * Handle form submission
    * @param {import('react').SyntheticEvent} e Event object
-   * @returns {void}
    */
   async function handleFormSubmit(e) {
     e.preventDefault();
 
-    await toast.promise(
-      register({
-        firstName,
-        lastName,
-        email,
-        password
-      }),
-      {
-        loading: 'Creating account...',
-        success: 'Account created successfully!',
-        error: 'Failed to create account. Please try again!'
-      }
-    );
+    await register({
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      password: data.password
+    });
 
     navigate('/create-project');
   }
+  /**
+   * Handle form changes
+   * @param {import('react').SyntheticEvent} e Event object
+   * @returns {void}
+   */
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    setData({
+      ...data,
+      [name]: value
+    });
+  }
 
   return (
-    <div className="w-full max-w-sm flex-1 rounded-lg bg-white p-8 shadow-lg">
-      <h2 className="mb-6 text-center text-xl font-semibold text-primary hover:text-primary-dark">
-        Sign Up
-      </h2>
+    <div className="rounded-box w-full max-w-sm bg-white px-8 py-20">
+      <h2 className="mb-2 text-center text-xl font-bold">Sign Up</h2>
       <h6 className="text-center text-sm">Time to automate your SEO with AI</h6>
       <form onSubmit={handleFormSubmit}>
-        <div className="mb-4 mt-5">
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            value={formData.firstName || ''}
-            onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-4 py-2 text-xs"
-            placeholder="First Name"
-          />
+        <div className="mt-5 mb-4">
+          <label className="input validator bg-white">
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              value={data.firstName}
+              onChange={handleChange}
+              placeholder="First Name"
+              required
+            />
+          </label>
+          <div className="validator-hint text-error-content hidden">
+            Enter valid first name
+          </div>
         </div>
 
         <div className="mb-4">
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName || ''}
-            onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-4 py-2 text-xs"
-            placeholder="Last Name"
-          />
+          <label className="input validator bg-white">
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={data.lastName}
+              onChange={handleChange}
+              placeholder="Last Name"
+              required
+            />
+          </label>
+          <div className="validator-hint text-error-content hidden">
+            Enter valid Last name
+          </div>
         </div>
-        <div className="mb-4 mt-5">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email || ''}
-            onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-4 py-2 text-xs"
-            placeholder="Email"
-          />
+        <div className="mt-5 mb-4">
+          <label className="input validator bg-white">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={data.email}
+              onChange={handleChange}
+              placeholder="Email"
+              required
+            />
+          </label>
+          <div className="validator-hint text-error-content hidden">
+            Enter valid email address
+          </div>
         </div>
 
         <div className="mb-6">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password || ''}
-            onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-4 py-2 text-xs"
-            placeholder="Password must NOT have fewer than 8 characters"
-          />
-        </div>
-
-        <div className="mb-6 flex items-center">
-          <input
-            type="checkbox"
-            id="agreedToTerms"
-            name="agreedToTerms"
-            checked={formData.agreedToTerms}
-            onChange={handleChange}
-            className="mr-2 text-xs"
-          />
-          <label htmlFor="agreedToTerms" className="text-xs text-gray-700">
-            I agree to the{' '}
-            <a
-              href="/terms"
-              className="text-xs text-primary hover:text-primary-dark hover:underline"
+          <label className="input validator relative bg-white">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              id="password"
+              name="password"
+              value={data.password}
+              onChange={handleChange}
+              required
+              placeholder="Password"
+              minLength="8"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+            />
+            <button
+              type="button"
+              onClick={function () {
+                setShowPassword(!showPassword);
+              }}
+              className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer"
             >
-              Terms of Service
-            </a>{' '}
-            and{' '}
-            <a
-              href="/privacy-policy"
-              className="text-xs text-primary hover:text-primary-dark hover:underline"
-            >
-              Privacy Policy
-            </a>
+              {showPassword ? (
+                <EyeSlashIcon className="h-5 w-5 text-gray-500" />
+              ) : (
+                <EyeIcon className="h-5 w-5 text-gray-500" />
+              )}
+            </button>
           </label>
+          <p className="validator-hint text-error-content hidden">
+            Must be more than 8 characters, including
+            <br />
+            At least one number
+            <br />
+            At least one lowercase letter
+            <br />
+            At least one uppercase letter
+          </p>
         </div>
 
         <button
           type="submit"
-          className="hover:bg-darkestbrown w-full rounded-md bg-primary py-2 text-xs text-white hover:bg-primary-dark"
-          disabled={!formData.agreedToTerms}
+          className="btn btn-primary w-full"
+          disabled={isLoading}
         >
+          {isLoading && <span className="loading loading-spinner"></span>}
           {isLoading ? 'Signing Up...' : 'Sign Up'}
         </button>
 
         {/* Error Message */}
-        {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
+        {error && <p className="text-error mt-2 text-sm">{error}</p>}
 
-        <div className="mt-6">
-          <SocialSignupButtons />
-        </div>
+        <div className="mt-6"></div>
       </form>
     </div>
   );
 }
-
-// Define propTypes for validation
-SignupForm.propTypes = {
-  formData: PropTypes.shape({
-    firstName: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-    agreedToTerms: PropTypes.bool.isRequired
-  }).isRequired,
-  handleChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired
-};

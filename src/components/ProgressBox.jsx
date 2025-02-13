@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 export default function ProgressBox({ progress }) {
   return (
-    <div className="mx-4 rounded-lg border border-secondary-lighter p-4 shadow-md">
+    <div className="border-secondary-lighter mx-4 rounded-lg border p-4 shadow-md">
       <div className="flex items-center justify-between">
         <div className="relative flex items-center justify-center">
           <svg className="h-12 w-12">
@@ -32,7 +32,7 @@ export default function ProgressBox({ progress }) {
           <span className="text-xs font-semibold text-black">Credits</span>
         </div>
         <div className="flex flex-col items-start">
-          <button className="mt-2 rounded-lg border border-primary-lighter px-1 py-1 text-xs font-semibold text-primary-lighter">
+          <button className="border-primary-lighter text-primary-lighter mt-2 rounded-lg border px-1 py-1 text-xs font-semibold">
             Upgrade
           </button>
         </div>

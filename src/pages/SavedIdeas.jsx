@@ -1,11 +1,16 @@
-import Sidebar from '../components/Sidebar';
+import Sidebar from '@components/Sidebar';
+import {
+  TrashIcon,
+  DocumentDuplicateIcon,
+  CheckCircleIcon
+} from '@heroicons/react/24/solid';
 
 export default function SavedIdeas() {
   return (
-    <div className="flex min-h-screen bg-secondary-light">
+    <div className="bg-secondary-light flex min-h-screen">
       <Sidebar />
       <main className="flex-1 p-5 md:ml-10">
-        <h1 className="mb-6 text-left text-3xl font-bold text-primary-dark">
+        <h1 className="text-primary-dark mb-6 text-left text-3xl font-bold">
           Saved Ideas
         </h1>
 
@@ -21,15 +26,17 @@ export default function SavedIdeas() {
                     {[...Array(2)].map((_, colIndex) => (
                       <div
                         key={colIndex}
-                        className="flex flex-col rounded-lg border border-gray-300 bg-secondary-light p-2 shadow-md"
+                        className="bg-secondary-light flex flex-col rounded-lg border border-gray-300 p-2 shadow-md"
                       >
                         <div className="flex items-center justify-between">
-                          <p className="mr-8 mt-2 flex-1 text-sm font-bold text-primary-dark">
+                          <p className="text-primary-dark mt-2 mr-8 flex-1 text-sm font-bold">
                             How to build an effective email list from scratch
                           </p>
                           <div className="flex space-x-3">
-                            <i className="fas fa-trash cursor-pointer text-primary hover:text-primary-dark"></i>
-                            <i className="fa-regular fa-clone cursor-pointer text-primary hover:text-primary-dark"></i>
+                            <TrashIcon className="text-primary hover:text-secondary h-4 w-4 cursor-pointer" />
+                            <DocumentDuplicateIcon className="text-primary hover:text-secondary h-4 w-4 cursor-pointer" />
+
+                            <CheckCircleIcon className="text-primary hover:text-secondary h-4 w-4 cursor-pointer" />
                           </div>
                         </div>
                         <div className="text-right text-xs text-gray-500">

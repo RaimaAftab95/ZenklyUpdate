@@ -1,155 +1,51 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin "daisyui";
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@theme {
+  --font-family-inter:
+    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@plugin "daisyui/theme" {
+  name: 'zenkly';
+  default: true;
+  prefersdark: true;
+  color-scheme: 'dark';
+  --color-base-100: #ffedd5;
+  --color-base-200: #fff7ed;
+  --color-base-300: oklch(98% 0.016 73.684);
+  --color-base-content: #9a3412;
+  --color-primary: #b45309;
+  --color-primary-content: #ffffff;
+  --color-secondary: #7c2d12;
+  --color-secondary-content: #fff;
+  --color-accent: #b45309;
+  --color-accent-content: oklch(98% 0.003 247.858);
+  --color-neutral: #fff7ed;
+  --color-neutral-content: #4b5563;
+  --color-info: #dbeafe;
+  --color-info-content: #1e40af;
+  --color-success: #166534;
+  --color-success-content: #dcfce7;
+  --color-warning: #fef9c3;
+  --color-warning-content: #92400e;
+  --color-error: #991b1b;
+  --color-error-content: #fee2e2;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 2rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+  --font-sans: var(--font-family-inter);
 }
 
 html,
 body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-@font-face {
-  font-family: 'mluvka';
-  src: url('/fonts/mluvka/regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'nohemi';
-  src:
-    url('/fonts/nohemi/regular.otf') format('opentype'),
-    url('/fonts/nohemi/regular.woff') format('woff'),
-    url('/fonts/nohemi/regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@layer utilities {
-  .top-30\/30 {
-    top: 100%;
-  }
-
-  .top-29\/30 {
-    top: 96.6667%;
-  }
-
-  .top-28\/30 {
-    top: 93.3333%;
-  }
-
-  .top-27\/30 {
-    top: 90%;
-  }
-
-  .top-26\/30 {
-    top: 86.6667%;
-  }
-
-  .top-25\/30 {
-    top: 83.3333%;
-  }
-
-  .top-24\/30 {
-    top: 80%;
-  }
-
-  .top-23\/30 {
-    top: 76.6667%;
-  }
-
-  .top-22\/30 {
-    top: 73.3333%;
-  }
-
-  .top-21\/30 {
-    top: 70%;
-  }
-
-  .top-20\/30 {
-    top: 66.6667%;
-  }
-
-  .top-19\/30 {
-    top: 63.3333%;
-  }
-
-  .top-18\/30 {
-    top: 60%;
-  }
-
-  .top-17\/30 {
-    top: 56.6667%;
-  }
-
-  .top-16\/30 {
-    top: 53.3333%;
-  }
-
-  .top-15\/30 {
-    top: 50%;
-  }
-
-  .top-14\/30 {
-    top: 46.6667%;
-  }
-
-  .top-13\/30 {
-    top: 43.3333%;
-  }
-
-  .top-12\/30 {
-    top: 40%;
-  }
-
-  .top-11\/30 {
-    top: 36.6667%;
-  }
-
-  .top-10\/30 {
-    top: 33.3333%;
-  }
-
-  .top-9\/30 {
-    top: 30%;
-  }
-
-  .top-8\/30 {
-    top: 26.6667%;
-  }
-
-  .top-7\/30 {
-    top: 23.3333%;
-  }
-
-  .top-6\/30 {
-    top: 20%;
-  }
-
-  .top-5\/30 {
-    top: 16.6667%;
-  }
-
-  .top-4\/30 {
-    top: 13.3333%;
-  }
-
-  .top-3\/30 {
-    top: 10%;
-  }
-
-  .top-2\/30 {
-    top: 6.6667%;
-  }
-
-  .top-1\/30 {
-    top: 3.3333%;
-  }
+  @apply bg-base-200;
+  @apply text-neutral-content;
+  @apply font-sans;
 }

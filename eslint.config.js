@@ -33,7 +33,8 @@ export default [
         'warn',
         { allowConstantExport: true }
       ],
-      'eol-last': 'error'
+      'eol-last': 'error',
+      'no-console': 'error'
     }
   }
 ];

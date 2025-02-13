@@ -1,73 +1,87 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+
+// eslint-disable-next-line react/prop-types
+function NavItem({ to, label }) {
+  return (
+    <li>
+      <Link to={to} className="px-1 text-sm">
+        {label}
+      </Link>
+    </li>
+  );
+}
+
+function SignUpButton() {
+  return (
+    <Link to="/signup">
+      <button className="btn btn-primary text-primary-content rounded-box btn-sm">
+        Sign Up
+      </button>
+    </Link>
+  );
+}
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+  const navItems = [
+    { to: '/', label: 'Home' },
+    { to: '/features', label: 'Features' },
+    { to: '/login', label: 'Login' }
+  ];
 
   return (
-    <nav className="relative mx-auto flex w-11/12 max-w-4xl items-center justify-between rounded-full bg-primary-light p-3">
-      <div className="text-lg font-bold text-primary hover:text-primary-dark">
-        Logo
+    <nav className="navbar bg-base-100 rounded-box relative mx-auto my-10 w-11/12 max-w-4xl px-4">
+      <div className="flex-1">
+        <h1 className="px-3 text-xl font-bold">Zenkly</h1>
       </div>
 
-      <div className="hidden items-center gap-6 md:flex">
-        <a href="/" className="text-sm text-graytext hover:text-primary">
-          Home
-        </a>
-        <a
-          href="/features"
-          className="text-sm text-graytext hover:text-primary"
-        >
-          Features
-        </a>
-        <a href="/login" className="text-sm text-graytext hover:text-primary">
-          Login
-        </a>
-        <button className="rounded-full bg-primary px-5 py-1.5 text-sm text-white hover:bg-primary-dark">
-          Sign Up
-        </button>
+      {/* Desktop Navigation */}
+      <div className="hidden flex-none md:flex">
+        <ul className="flex items-center gap-4">
+          {navItems.map((item) => (
+            <NavItem key={item.to} {...item} />
+          ))}
+          <li>
+            <SignUpButton />
+          </li>
+        </ul>
       </div>
 
-      {/* Mobile menu icon */}
-      <div className="md:hidden">
+      {/* Mobile Navigation */}
+      <div className="flex-none md:hidden">
         <button
-          onClick={toggleMenu}
+          className="btn btn-square btn-ghost"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? (
-            <i className="fas fa-times text-2xl text-primary hover:text-primary-dark"></i>
+            <XMarkIcon className="text-primary h-6 w-6" />
           ) : (
-            <i className="fas fa-bars text-2xl text-primary hover:text-primary-dark"></i>
+            <Bars3Icon className="text-primary h-6 w-6" />
           )}
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="absolute left-0 top-20 w-full bg-secondary-light p-6 md:hidden">
-          <a
-            href="/"
-            className="block py-2 text-sm text-graytext hover:text-primary"
-          >
-            Home
-          </a>
-          <a
-            href="/features"
-            className="block py-2 text-sm text-graytext hover:text-primary"
-          >
-            Features
-          </a>
-          <a
-            href="/login"
-            className="block py-2 text-sm text-graytext hover:text-primary"
-          >
-            Login
-          </a>
-          <button className="mt-4 block w-full rounded-full bg-primary px-4 py-2 text-sm text-white hover:bg-primary-dark">
-            Sign Up
-          </button>
-        </div>
-      )}
+      {/* Mobile Menu Dropdown */}
+      <div
+        className={`${
+          isMenuOpen ? 'block' : 'hidden'
+        } absolute right-0 left-0 z-50 mt-2 px-4 md:hidden`}
+        style={{ top: 'calc(100% - 8px)' }}
+      >
+        <ul className="bg-base-100 rounded-b-box w-full space-y-2.5 p-4 shadow-lg">
+          {navItems.map((item) => (
+            <NavItem key={item.to} {...item} />
+          ))}
+          <li>
+            <SignUpButton />
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }

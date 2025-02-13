@@ -1,31 +1,47 @@
 export default function Footer() {
   return (
-    <footer className="w-full rounded-t-2xl bg-primary-light px-6 py-10 text-primary hover:text-primary-dark">
+    <footer className="bg-base-100 text-primary hover:text-primary-dark w-full rounded-t-2xl px-6 py-10">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
           <div className="space-y-6 lg:w-1/4">
-            <div>
-              <img src="/logo.png" alt="Logo" className="h-10" />
+            <div className="flex items-center space-x-1">
+              <img src="/images/logo.png" alt="Logo" className="h-6" />
+              <span className="text-lg font-bold">Zenkly</span>
             </div>
 
             <p className="text-sm">Automate your blog with AI</p>
 
             <div className="flex gap-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary-dark">
-                <i className="fab fa-facebook-f"></i>
-              </div>
-
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary-dark">
-                <i className="fab fa-twitter"></i>
-              </div>
-
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary-dark">
-                <i className="fab fa-instagram"></i>
-              </div>
-
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary-dark">
-                <i className="fab fa-linkedin"></i>
-              </div>
+              {[
+                {
+                  src: '/images/facebook-social-logo.png',
+                  alt: 'Facebook',
+                  className: 'h-4'
+                },
+                {
+                  src: '/images/twitter-social-logo.png',
+                  alt: 'Twitter',
+                  className: 'h-4'
+                },
+                {
+                  src: '/images/instagram-social-logo.png',
+                  alt: 'Instagram',
+                  className: 'h-4'
+                },
+                {
+                  src: '/images/combined-shape-social-logo.png',
+                  alt: 'Shape',
+                  className: 'h-4'
+                }
+              ].map((icon, index) => (
+                <div key={index} className="flex items-center justify-center">
+                  <img
+                    src={icon.src}
+                    alt={icon.alt}
+                    className={icon.className}
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
@@ -61,7 +77,7 @@ export default function Footer() {
                     <li key={idx}>
                       <a
                         href="#"
-                        className="text-sm text-primary hover:text-primary-dark hover:underline"
+                        className="text-primary hover:text-primary-dark text-sm hover:underline"
                       >
                         {link}
                       </a>
@@ -73,7 +89,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <hr className="mx-0 my-6 w-full border-primary" />
+        <hr className="border-primary mx-0 my-6 w-full" />
 
         <div className="text-center text-sm">
           &copy; 2020. All rights reserved.
