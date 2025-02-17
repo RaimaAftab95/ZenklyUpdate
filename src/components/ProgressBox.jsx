@@ -29,12 +29,12 @@ export default function ProgressBox({ progress }) {
             />
           </svg>
 
-          <span className="text-sm leading-tight font-medium tracking-normal text-black">
+          <span className="text-sm leading-tight font-medium text-black">
             Credits
           </span>
         </div>
         <div className="flex flex-col items-start">
-          <button className="border-primary-lighter text-primary-lighter mt-2 rounded-lg border p-2 text-xs leading-none font-medium tracking-normal">
+          <button className="border-primary-lighter text-primary-lighter mt-2 rounded-lg border p-2 text-xs leading-none font-medium">
             Upgrade
           </button>
         </div>
