@@ -19,15 +19,15 @@ export default function SavedIdeas() {
       <main className="flex-1 p-6">
         <h1 className="text-secondary mb-6 text-4xl font-bold">Saved Ideas</h1>
 
-        <div className="mb-8 w-full max-w-4xl rounded-lg bg-white p-10 shadow-lg">
-          <h2 className="text-lg leading-5 font-semibold tracking-normal text-black">
+        <div className="mb-8 max-h-96 w-full max-w-4xl rounded-lg bg-white p-10 shadow-lg">
+          <h2 className="text-lg leading-5 font-semibold text-black">
             Find all your generated ideas
           </h2>
           <p className="mb-4 text-sm text-black">
             Copy your favorite saved ideas to create posts
           </p>
 
-          <div className="grid grid-cols-1 gap-6 space-y-6 sm:grid-cols-2 md:grid-cols-2">
+          <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-2">
             {[...Array(8)].map((_, rowIndex) => {
               const ideaIndex = rowIndex;
               return (
@@ -38,7 +38,7 @@ export default function SavedIdeas() {
                 >
                   <div className="flex items-center justify-between">
                     <p
-                      className={`text-sm font-bold ${
+                      className={`text-sm leading-tight font-medium ${
                         markedIdeas[ideaIndex]
                           ? 'text-primary'
                           : 'text-secondary'
@@ -63,7 +63,7 @@ export default function SavedIdeas() {
                       )}
                     </div>
                   </div>
-                  <div className="text-right text-xs text-gray-500">
+                  <div className="text-secondary text-right text-xs font-medium">
                     Aug 14, 2024
                   </div>
                 </div>
