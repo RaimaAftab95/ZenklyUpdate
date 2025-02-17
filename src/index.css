@@ -32,6 +32,7 @@
   --color-warning-content: #92400e;
   --color-error: #991b1b;
   --color-error-content: #fee2e2;
+  --color-gradient-bg: linear-gradient(180deg, #fed7aa 0%, #ffedd5 100%);
   --radius-selector: 0.5rem;
   --radius-field: 0.5rem;
   --radius-box: 2rem;
