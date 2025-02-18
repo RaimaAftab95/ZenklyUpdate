@@ -49,9 +49,9 @@ export default function UpgradeAccount() {
                   per month
                 </p>
                 <button
-                  className={`w-full rounded-xl px-4 py-2 text-sm font-bold ${
+                  className={`w-full rounded-xl px-4 py-2 text-sm leading-4 font-medium ${
                     colIndex === 0
-                      ? 'border-secondary text-secondary border-2'
+                      ? 'border-secondary text-secondary border'
                       : 'bg-secondary text-white'
                   }`}
                 >
@@ -61,25 +61,30 @@ export default function UpgradeAccount() {
 
               <div className="mt-4">
                 <div className="flex items-center">
-                  <p className="text-secondary text-sm font-bold">Features</p>
-                  <div className="bg-primary ml-2 h-px flex-1"></div>
+                  <p className="text-secondary text-sm leading-4 font-semibold">
+                    Features
+                  </p>
+                  <div
+                    className="ml-2 h-px flex-1"
+                    style={{ backgroundColor: 'var(--color-base-400)' }}
+                  ></div>
                 </div>
-                <ul className="text-secondary mt-4 space-y-2 text-sm">
+                <ul className="text-base-content mt-4 space-y-2 text-sm leading-5">
                   <li className="flex items-start">
                     <CheckCircleIcon className="mr-2 h-4 w-4" />
-                    Feature 1: Basic tools for optimization
+                    Basic tools for optimization
                   </li>
                   <li className="flex items-start">
                     <CheckCircleIcon className="mr-2 h-4 w-4" />
-                    Feature 2: Limited GPTSEO credits
+                    Limited GPTSEO credits
                   </li>
                   <li className="flex items-start">
                     <CheckCircleIcon className="mr-2 h-4 w-4" />
-                    Feature 3: Email support
+                    Email support
                   </li>
                   <li className="flex items-start">
                     <CheckCircleIcon className="mr-2 h-4 w-4" />
-                    Feature 4: Community access
+                    Community access
                   </li>
                 </ul>
               </div>
