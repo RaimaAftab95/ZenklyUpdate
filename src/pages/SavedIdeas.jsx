@@ -19,11 +19,11 @@ export default function SavedIdeas() {
       <main className="flex-1 p-6">
         <h1 className="text-secondary mb-6 text-4xl font-bold">Saved Ideas</h1>
 
-        <div className="mb-8 max-h-96 w-full max-w-4xl rounded-lg bg-white p-10 shadow-lg">
-          <h2 className="text-lg leading-5 font-semibold text-black">
+        <div className="mb-8 max-h-96 w-full max-w-4xl rounded-xl bg-white p-10 shadow-lg">
+          <h2 className="text-lg leading-6 font-semibold text-black">
             Find all your generated ideas
           </h2>
-          <p className="mb-4 text-sm text-black">
+          <p className="mb-4 text-sm leading-5 text-black">
             Copy your favorite saved ideas to create posts
           </p>
 
@@ -63,7 +63,7 @@ export default function SavedIdeas() {
                       )}
                     </div>
                   </div>
-                  <div className="text-secondary text-right text-xs font-medium">
+                  <div className="text-secondary text-right text-xs leading-5 font-medium">
                     Aug 14, 2024
                   </div>
                 </div>
