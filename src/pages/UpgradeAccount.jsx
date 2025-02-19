@@ -3,7 +3,7 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid';
 
 export default function UpgradeAccount() {
   return (
-    <div className="bg-secondary-light flex min-h-screen">
+    <div className="flex min-h-screen">
       <Sidebar />
       <main className="flex-1 p-6">
         <h1 className="text-secondary mb-6 text-4xl font-bold">
@@ -14,7 +14,7 @@ export default function UpgradeAccount() {
           {[...Array(3)].map((_, colIndex) => (
             <div
               key={colIndex}
-              className={`bg-base-100 relative flex flex-col rounded-lg p-4 shadow-md ${
+              className={`bg-base-100 relative flex flex-col rounded-2xl p-4 shadow-md ${
                 colIndex === 1 ? 'border-secondary border-2' : ''
               }`}
             >
@@ -49,7 +49,7 @@ export default function UpgradeAccount() {
                   per month
                 </p>
                 <button
-                  className={`w-full rounded-xl px-4 py-2 text-sm leading-4 font-medium ${
+                  className={`w-full rounded-md px-4 py-2 text-sm leading-4 font-medium ${
                     colIndex === 0
                       ? 'border-secondary text-secondary border'
                       : 'bg-secondary text-white'
