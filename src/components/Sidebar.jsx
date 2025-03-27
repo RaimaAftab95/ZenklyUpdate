@@ -26,7 +26,7 @@ export default function Sidebar() {
     <>
       {/* Hamburger Menu Button */}
       <button
-        className="absolute top-4 left-4 z-50 block md:hidden"
+        className="fixed top-4 right-4 z-50 rounded-lg bg-white p-2 shadow-md md:hidden"
         onClick={toggleMenu}
       >
         {isMenuOpen ? (
@@ -35,6 +35,12 @@ export default function Sidebar() {
           <Bars3Icon className="text-primary h-6 w-6" />
         )}
       </button>
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black/50 lg:hidden"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
 
       {/* Sidebar */}
       <aside
@@ -86,7 +92,7 @@ export default function Sidebar() {
 
           <nav className="text-secondary text-sm leading-tight font-semibold tracking-normal">
             <NavLink
-              to="/generate-idea"
+              to="/generate-idea-choose-blogs"
               className={({ isActive }) =>
                 `flex items-center space-x-3 rounded-lg p-2 ${
                   isActive

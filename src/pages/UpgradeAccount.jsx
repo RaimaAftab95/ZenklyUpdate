@@ -1,10 +1,8 @@
-import Sidebar from '@components/Sidebar';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 
 export default function UpgradeAccount() {
   return (
     <div className="flex min-h-screen">
-      <Sidebar />
       <main className="flex-1 p-6">
         <h1 className="text-secondary mb-6 text-4xl font-bold">
           Choose a plan to get started

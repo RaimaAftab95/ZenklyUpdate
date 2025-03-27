@@ -1,4 +1,3 @@
-import Sidebar from '@components/Sidebar';
 import { PlusCircleIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
@@ -11,7 +10,6 @@ export default function AccountSettings() {
 
   return (
     <div className="flex min-h-screen">
-      <Sidebar />
       <main className="flex-1 p-10">
         <div className="mb-4 flex w-full max-w-4xl flex-col">
           <div className="flex w-full justify-end pr-0 md:pr-16">

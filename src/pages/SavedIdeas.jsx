@@ -1,4 +1,3 @@
-import Sidebar from '@components/Sidebar';
 import { TrashIcon, DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 import { CheckCircleIcon as CheckCircleIconOutline } from '@heroicons/react/24/outline';
 import { CheckCircleIcon as CheckCircleIconSolid } from '@heroicons/react/24/solid';
@@ -15,7 +14,6 @@ export default function SavedIdeas() {
 
   return (
     <div className="flex min-h-screen">
-      <Sidebar />
       <main className="flex-1 p-6">
         <h1 className="text-secondary mb-6 text-4xl font-bold">Saved Ideas</h1>
 
