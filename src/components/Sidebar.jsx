@@ -83,40 +83,42 @@ export default function Sidebar() {
           </div>
 
           {/* Menu Items */}
-          <nav className="text-primary-dark text-sm">
+
+          <nav className="text-secondary text-sm leading-tight font-semibold tracking-normal">
             <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
-              <SparklesIcon className="text-primary h-5 w-5" />
+              <SparklesIcon className="h-5 w-5" />
               <span>Generate Ideas</span>
             </div>
             <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
-              <BookmarkIcon className="text-primary h-5 w-5" />
+              <BookmarkIcon className="h-5 w-5" />
               <span>Saved Ideas</span>
             </div>
             <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
-              <ArrowUpCircleIcon className="text-primary h-5 w-5" />
+              <ArrowUpCircleIcon className="h-5 w-5" />
               <span>Upgrade Account</span>
             </div>
           </nav>
         </div>
 
+        <div className="h-52"></div>
         {location.pathname !== '/generate-idea' && (
           <ProgressBox progress={progress} />
         )}
 
         {/* Bottom Section */}
         <div className="p-4">
-          <hr className="border-secondary-lighter my-4 w-1/2" />
-          <nav className="text-primary-dark text-sm">
+          <hr className="border-secondary-lighter my-5 w-1/2" />
+          <nav className="text-secondary text-sm leading-tight font-semibold">
             <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
-              <QuestionMarkCircleIcon className="text-primary h-5 w-5" />
+              <QuestionMarkCircleIcon className="h-5 w-5" />
               <span>Need Help?</span>
             </div>
             <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
-              <UserIcon className="text-primary h-5 w-5" />
+              <UserIcon className="h-5 w-5" />
               <span>Account Settings</span>
             </div>
             <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
-              <ArrowRightStartOnRectangleIcon className="text-primary h-5 w-5" />
+              <ArrowRightStartOnRectangleIcon className="h-5 w-5" />
               <span>Sign Out</span>
             </div>
           </nav>
