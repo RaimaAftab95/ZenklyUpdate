@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import ProgressBox from '../components/ProgressBox';
 import {
   BookmarkIcon,
@@ -85,18 +85,45 @@ export default function Sidebar() {
           {/* Menu Items */}
 
           <nav className="text-secondary text-sm leading-tight font-semibold tracking-normal">
-            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+            <NavLink
+              to="/generate-idea"
+              className={({ isActive }) =>
+                `flex items-center space-x-3 rounded-lg p-2 ${
+                  isActive
+                    ? 'bg-primary-light text-primary'
+                    : 'hover:bg-secondary-light sm:hover:bg-primary-light'
+                }`
+              }
+            >
               <SparklesIcon className="h-5 w-5" />
               <span>Generate Ideas</span>
-            </div>
-            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+            </NavLink>
+            <NavLink
+              to="/saved-ideas"
+              className={({ isActive }) =>
+                `flex items-center space-x-3 rounded-lg p-2 ${
+                  isActive
+                    ? 'bg-primary-light text-primary'
+                    : 'hover:bg-secondary-light sm:hover:bg-primary-light'
+                }`
+              }
+            >
               <BookmarkIcon className="h-5 w-5" />
               <span>Saved Ideas</span>
-            </div>
-            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+            </NavLink>
+            <NavLink
+              to="/upgrade-account"
+              className={({ isActive }) =>
+                `flex items-center space-x-3 rounded-lg p-2 ${
+                  isActive
+                    ? 'bg-primary-light text-primary'
+                    : 'hover:bg-secondary-light sm:hover:bg-primary-light'
+                }`
+              }
+            >
               <ArrowUpCircleIcon className="h-5 w-5" />
               <span>Upgrade Account</span>
-            </div>
+            </NavLink>
           </nav>
         </div>
 
@@ -113,14 +140,26 @@ export default function Sidebar() {
               <QuestionMarkCircleIcon className="h-5 w-5" />
               <span>Need Help?</span>
             </div>
-            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+            <NavLink
+              to="/account-settings"
+              className={({ isActive }) =>
+                `flex items-center space-x-3 rounded-lg p-2 ${
+                  isActive
+                    ? 'bg-primary-light text-primary'
+                    : 'hover:bg-secondary-light sm:hover:bg-primary-light'
+                }`
+              }
+            >
               <UserIcon className="h-5 w-5" />
               <span>Account Settings</span>
-            </div>
-            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+            </NavLink>
+            <NavLink
+              to="/"
+              className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2"
+            >
               <ArrowRightStartOnRectangleIcon className="h-5 w-5" />
               <span>Sign Out</span>
-            </div>
+            </NavLink>
           </nav>
         </div>
       </aside>
