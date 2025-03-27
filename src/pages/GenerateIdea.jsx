@@ -1,27 +1,28 @@
 import Sidebar from '@components/Sidebar';
-import { DocumentDuplicateIcon } from '@heroicons/react/24/solid';
 
 export default function GenerateIdea() {
   return (
-    <div className="bg-secondary-light flex min-h-screen">
+    <div className="flex min-h-screen">
       <Sidebar />
-      <main className="mt-10 flex flex-1 flex-col p-5 md:ml-10">
-        <h1 className="text-secondary mb-6 text-left text-3xl font-bold md:ml-10">
+      <main className="flex-1 p-6">
+        <h1 className="text-secondary mb-6 text-4xl font-bold">
           Generate Ideas
         </h1>
 
-        {/* Main Content Box */}
-        <div className="text-primary flex justify-center">
-          <div className="w-full max-w-3xl rounded-lg bg-white p-10 text-center shadow-lg">
-            <div className="mb-6 flex flex-col items-center">
-              <DocumentDuplicateIcon className="mb-4 h-12 w-12" />
-              <p className="text-lg font-bold">
-                Please wait while we are fetching your blog posts....
+        <div className="mb-8 max-h-96 w-full max-w-4xl rounded-2xl bg-white p-10 shadow-lg">
+          <div className="text-secondary relative mb-8 flex flex-col items-center">
+            <img
+              src="images/dashboard-icon.png"
+              alt="Dashboard Icon"
+              className="mb-4 h-40 w-60"
+            />
+            {/* text on image */}
+            <div className="text-secondary absolute inset-x-0 top-2/4 flex flex-col items-center justify-center">
+              <p className="text-lg leading-6 font-semibold">
+                Please wait while we are fetching your blog posts...
               </p>
+              <p className="text-sm leading-5">This may take a few seconds.</p>
             </div>
-            <p className="text-primary-dark text-sm">
-              This may take a few seconds.
-            </p>
           </div>
         </div>
       </main>
