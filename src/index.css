@@ -15,6 +15,7 @@
   --color-base-100: #ffedd5;
   --color-base-200: #fff7ed;
   --color-base-300: oklch(98% 0.016 73.684);
+  --color-base-400: #fed7aa;
   --color-base-content: #9a3412;
   --color-primary: #b45309;
   --color-primary-content: #ffffff;
@@ -32,6 +33,7 @@
   --color-warning-content: #92400e;
   --color-error: #991b1b;
   --color-error-content: #fee2e2;
+  --color-new-gradient: linear-gradient(90deg, #fed7aa 0%, #fdba74 100%);
   --color-gradient-bg: linear-gradient(180deg, #fed7aa 0%, #ffedd5 100%);
   --radius-selector: 0.5rem;
   --radius-field: 0.5rem;

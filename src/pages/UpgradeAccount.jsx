@@ -3,10 +3,10 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid';
 
 export default function UpgradeAccount() {
   return (
-    <div className="bg-secondary-light flex min-h-screen">
+    <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 p-5 md:ml-10">
-        <h1 className="text-primary-dark mb-6 text-left text-3xl font-bold">
+      <main className="flex-1 p-6">
+        <h1 className="text-secondary mb-6 text-4xl font-bold">
           Choose a plan to get started
         </h1>
 
@@ -14,40 +14,45 @@ export default function UpgradeAccount() {
           {[...Array(3)].map((_, colIndex) => (
             <div
               key={colIndex}
-              className={`bg-primary-light relative flex flex-col rounded-lg p-4 shadow-md ${
-                colIndex === 1 ? 'border-primary-dark border-2' : ''
+              className={`bg-base-100 relative flex flex-col rounded-2xl p-4 shadow-md ${
+                colIndex === 1 ? 'border-secondary border-2' : ''
               }`}
             >
               {colIndex === 1 && (
-                <div className="border-primary-dark text-primary-dark absolute -top-4 left-1/2 -translate-x-1/2 transform rounded-full border-2 bg-white px-4 py-1 text-xs font-bold shadow-sm">
+                <div className="bg-secondary absolute -top-4 left-1/2 -translate-x-1/2 transform rounded-full px-4 py-1 text-xs font-bold text-white shadow-sm">
                   Recommended
                 </div>
               )}
 
-              <div className="bg-secondary-light rounded-lg p-6">
-                <button className="bg-secondary-dark text-primary-dark hover:bg-primary-dark hover:text-secondary-dark mb-2 rounded-full px-4 py-1 text-sm font-bold">
+              <div className="bg-base-200 rounded-lg p-6">
+                <button
+                  className="text-base-content mb-2 rounded-full px-4 py-1 text-base leading-tight font-bold"
+                  style={{ background: 'var(--color-new-gradient)' }}
+                >
                   {colIndex === 0
                     ? 'Free'
                     : colIndex === 1
                       ? 'Pro'
                       : 'Enterprise'}
                 </button>
-                <p className="text-primary-dark mb-2 text-sm font-bold">
+                <p className="text-secondary mb-2 text-sm leading-tight">
                   {colIndex === 0
-                    ? 'Suitable for trying out GPTSEO'
+                    ? 'Suitable for trying out Zenkly'
                     : colIndex === 1
                       ? 'Great for small projects'
                       : 'Best for large-scale businesses'}
                 </p>
-                <p className="text-primary-dark text-2xl font-bold">
+                <p className="text-secondary text-4xl leading-tight font-semibold">
                   {colIndex === 0 ? '$0' : colIndex === 1 ? '$49' : '$99'}
                 </p>
-                <p className="mb-4 text-sm text-gray-500">per month</p>
+                <p className="text-secondary mb-4 text-xs leading-5 font-medium">
+                  per month
+                </p>
                 <button
-                  className={`rounded-xl border-2 px-4 py-2 text-sm font-bold ${
+                  className={`w-full rounded-md px-4 py-2 text-sm leading-4 font-medium ${
                     colIndex === 0
-                      ? 'border-primary-dark bg-secondary-light text-primary-dark'
-                      : 'border-primary-dark bg-primary-dark hover:bg-primary-light hover:text-secondary-dark text-white'
+                      ? 'border-secondary text-secondary border'
+                      : 'bg-secondary text-white'
                   }`}
                 >
                   {colIndex === 0 ? 'Current Plan' : 'Choose Plan'}
@@ -56,27 +61,30 @@ export default function UpgradeAccount() {
 
               <div className="mt-4">
                 <div className="flex items-center">
-                  <p className="text-primary-dark text-sm font-bold">
+                  <p className="text-secondary text-sm leading-4 font-semibold">
                     Features
                   </p>
-                  <div className="bg-graytext ml-2 h-px flex-1"></div>
+                  <div
+                    className="ml-2 h-px flex-1"
+                    style={{ backgroundColor: 'var(--color-base-400)' }}
+                  ></div>
                 </div>
-                <ul className="text-primary mt-4 space-y-2 text-sm">
+                <ul className="text-base-content mt-4 space-y-2 text-sm leading-5">
                   <li className="flex items-start">
-                    <CheckCircleIcon className="mr-2 h-4 w-4 text-green-500" />
-                    Feature 1: Basic tools for optimization
+                    <CheckCircleIcon className="mr-2 h-4 w-4" />
+                    Basic tools for optimization
                   </li>
                   <li className="flex items-start">
-                    <CheckCircleIcon className="mr-2 h-4 w-4 text-green-500" />
-                    Feature 2: Limited GPTSEO credits
+                    <CheckCircleIcon className="mr-2 h-4 w-4" />
+                    Limited GPTSEO credits
                   </li>
                   <li className="flex items-start">
-                    <CheckCircleIcon className="mr-2 h-4 w-4 text-green-500" />
-                    Feature 3: Email support
+                    <CheckCircleIcon className="mr-2 h-4 w-4" />
+                    Email support
                   </li>
                   <li className="flex items-start">
-                    <CheckCircleIcon className="mr-2 h-4 w-4 text-green-500" />
-                    Feature 4: Community access
+                    <CheckCircleIcon className="mr-2 h-4 w-4" />
+                    Community access
                   </li>
                 </ul>
               </div>
