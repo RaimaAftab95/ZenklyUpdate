@@ -14,7 +14,7 @@ export default function QuoteBox() {
         <h1 className="text-base-content my-4 text-2xl leading-tight font-semibold tracking-tighter">
           Most useful for <br /> product research
         </h1>
-        <p className="text-secondary text-sm leading-4 tracking-normal">
+        <p className="text-secondary text-sm leading-4">
           Literally, we have saved thousands of dollars in research and
           development of our new product this way.
         </p>
