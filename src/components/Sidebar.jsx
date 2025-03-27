@@ -83,7 +83,8 @@ export default function Sidebar() {
           </div>
 
           {/* Menu Items */}
-          <nav className="text-secondary text-sm leading-tight font-semibold">
+
+          <nav className="text-secondary text-sm leading-tight font-semibold tracking-normal">
             <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
               <SparklesIcon className="h-5 w-5" />
               <span>Generate Ideas</span>

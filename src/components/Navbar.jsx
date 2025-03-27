@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 function NavItem({ to, label }) {
   return (
     <li>
-      <Link to={to} className="px-1 text-sm">
+      <Link to={to} className="px-1">
         {label}
       </Link>
     </li>
@@ -34,8 +34,9 @@ export default function Navbar() {
 
   return (
     <nav className="navbar bg-base-100 rounded-box relative mx-auto my-10 w-11/12 max-w-4xl px-4">
-      <div className="flex-1">
-        <h1 className="px-3 text-xl font-bold">Zenkly</h1>
+      <div className="flex flex-1 items-center">
+        <img src="/images/logo.png" alt="Logo" className="h-4 object-contain" />
+        <h1 className="text-primary px-1 text-lg font-bold">Zenkly</h1>
       </div>
 
       {/* Desktop Navigation */}
