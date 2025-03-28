@@ -9,7 +9,7 @@ export default function GenerateIdea() {
         <div className="mb-8 max-h-96 w-full max-w-4xl rounded-2xl bg-white p-10 shadow-lg">
           <div className="text-secondary relative mb-8 flex flex-col items-center">
             <img
-              src="images/dashboard-icon.png"
+              src="/images/dashboard-icon.png"
               alt="Dashboard Icon"
               className="mb-4 h-40 w-60"
             />

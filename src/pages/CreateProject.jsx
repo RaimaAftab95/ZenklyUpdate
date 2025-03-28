@@ -101,7 +101,7 @@ export default function CreateProject() {
               generating ideas.
             </p>
             <NavLink
-              to="/generate-idea-choose-blogs"
+              to="/generate-idea-choose-blogs/generate-idea"
               className="bg-secondary hover:bg-primary inline-block w-full rounded-lg py-3 text-white"
             >
               Go to Dashboard

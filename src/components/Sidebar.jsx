@@ -96,8 +96,8 @@ export default function Sidebar() {
               className={({ isActive }) =>
                 `flex items-center space-x-3 rounded-lg p-2 ${
                   isActive
-                    ? 'bg-primary-light text-primary'
-                    : 'hover:bg-secondary-light sm:hover:bg-primary-light'
+                    ? 'text-primary bg-primary-content'
+                    : 'hover:bg-base-100'
                 }`
               }
             >
@@ -105,12 +105,12 @@ export default function Sidebar() {
               <span>Generate Ideas</span>
             </NavLink>
             <NavLink
-              to="/saved-ideas"
+              to="/generate-idea-choose-blogs/saved-ideas"
               className={({ isActive }) =>
-                `flex items-center space-x-3 rounded-lg p-2 ${
+                `mt-2 flex items-center space-x-3 rounded-lg p-2 ${
                   isActive
-                    ? 'bg-primary-light text-primary'
-                    : 'hover:bg-secondary-light sm:hover:bg-primary-light'
+                    ? 'bg-primary-content text-primary'
+                    : 'hover:bg-base-100'
                 }`
               }
             >
@@ -118,12 +118,12 @@ export default function Sidebar() {
               <span>Saved Ideas</span>
             </NavLink>
             <NavLink
-              to="/upgrade-account"
+              to="/generate-idea-choose-blogs/upgrade-account"
               className={({ isActive }) =>
-                `flex items-center space-x-3 rounded-lg p-2 ${
+                `mt-2 flex items-center space-x-3 rounded-lg p-2 ${
                   isActive
-                    ? 'bg-primary-light text-primary'
-                    : 'hover:bg-secondary-light sm:hover:bg-primary-light'
+                    ? 'bg-primary-content text-primary'
+                    : 'hover:bg-base-100'
                 }`
               }
             >
@@ -133,8 +133,8 @@ export default function Sidebar() {
           </nav>
         </div>
 
-        <div className="h-52"></div>
-        {location.pathname !== '/generate-idea' && (
+        <div className="h-32"></div>
+        {location.pathname !== '/generate-idea-choose-blogs/generate-idea' && (
           <ProgressBox progress={progress} />
         )}
 
@@ -147,12 +147,12 @@ export default function Sidebar() {
               <span>Need Help?</span>
             </div>
             <NavLink
-              to="/account-settings"
+              to="/generate-idea-choose-blogs/account-settings"
               className={({ isActive }) =>
-                `flex items-center space-x-3 rounded-lg p-2 ${
+                `mt-2 flex items-center space-x-3 rounded-lg p-2 ${
                   isActive
-                    ? 'bg-primary-light text-primary'
-                    : 'hover:bg-secondary-light sm:hover:bg-primary-light'
+                    ? 'bg-primary-content text-primary'
+                    : 'hover:bg-base-100'
                 }`
               }
             >
@@ -161,7 +161,7 @@ export default function Sidebar() {
             </NavLink>
             <NavLink
               to="/"
-              className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2"
+              className="hover:bg-secondary-light sm:hover:bg-primary-light mt-2 flex cursor-pointer items-center space-x-3 rounded-lg p-2"
             >
               <ArrowRightStartOnRectangleIcon className="h-5 w-5" />
               <span>Sign Out</span>

@@ -29,7 +29,7 @@ export default function Navbar() {
   const navItems = [
     { to: '/', label: 'Home' },
     { to: '/features', label: 'Features' },
-    { to: '/login', label: 'Login' }
+    { to: '/', label: 'Login' }
   ];
 
   return (
