@@ -8,7 +8,7 @@ export default function UpgradeAccount() {
           Choose a plan to get started
         </h1>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-3">
           {[...Array(3)].map((_, colIndex) => (
             <div
               key={colIndex}

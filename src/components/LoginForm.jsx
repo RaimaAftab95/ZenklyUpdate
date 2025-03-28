@@ -115,7 +115,9 @@ export default function LoginForm() {
           <div className="mb-4 text-center">
             <button
               type="submit"
-              className="btn btn-primary w-4/5 rounded-xl bg-indigo-500 leading-5 sm:w-3/5"
+              className={`btn btn-primary w-4/5 rounded-xl leading-5 sm:w-3/5 ${
+                isLoading ? '!bg-primary text-white' : 'bg-indigo-500'
+              }`}
               disabled={isLoading}
             >
               {isLoading && <span className="loading loading-spinner"></span>}
@@ -124,7 +126,9 @@ export default function LoginForm() {
           </div>
 
           {/* Error Message */}
-          {error && <p className="text-error mt-2 text-sm">{error}</p>}
+          {error && (
+            <p className="text-error mt-2 text-center text-sm">{error}</p>
+          )}
         </form>
       </div>
     </div>
