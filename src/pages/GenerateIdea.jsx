@@ -1,3 +1,5 @@
+import { ArrowPathIcon } from '@heroicons/react/24/outline';
+
 export default function GenerateIdea() {
   return (
     <div className="flex min-h-screen">
@@ -15,6 +17,11 @@ export default function GenerateIdea() {
             />
             {/* text on image */}
             <div className="text-secondary absolute inset-x-0 top-2/4 flex flex-col items-center justify-center">
+              <>
+                <ArrowPathIcon className="mr-2 inline-block h-5 w-5 animate-spin" />
+                Connecting...
+              </>
+
               <p className="text-lg leading-6 font-semibold">
                 Please wait while we are fetching your blog posts...
               </p>

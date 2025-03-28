@@ -1,5 +1,6 @@
 import { PlusCircleIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function AccountSettings() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -13,12 +14,14 @@ export default function AccountSettings() {
       <main className="flex-1 p-10">
         <div className="mb-4 flex w-full max-w-4xl flex-col">
           <div className="flex w-full justify-end pr-0 md:pr-16">
-            <button
-              className="rounded-lg border p-2 text-sm leading-5"
-              style={{ borderColor: '#C2410C', color: '#C2410C' }}
-            >
-              Sign Out
-            </button>
+            <Link to="/signup">
+              <button
+                className="rounded-lg border p-2 text-sm leading-5"
+                style={{ borderColor: '#C2410C', color: '#C2410C' }}
+              >
+                Sign Out
+              </button>
+            </Link>
           </div>
           <h1 className="text-secondary mt-2 text-4xl font-bold">
             Account Settings
@@ -167,7 +170,7 @@ export default function AccountSettings() {
                     <img
                       src="/images/cd-icon-image.png"
                       alt="Dropdown Icon"
-                      className="h- w-4"
+                      className="h-4 w-4"
                     />
                     <span>Content Drips</span>
                     <i

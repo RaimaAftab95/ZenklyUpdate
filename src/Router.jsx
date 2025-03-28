@@ -18,12 +18,15 @@ export default function Router() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/create-project" element={<CreateProject />} />
         {/* Layout routes */}
-        <Route path="/generate-idea-choose-blogs" element={<Layout />}>
-          <Route index element={<GenerateIdeaChooseBlogs />} />
-          <Route path="generate-idea" element={<GenerateIdea />} />
-          <Route path="saved-ideas" element={<SavedIdeas />} />
-          <Route path="upgrade-account" element={<UpgradeAccount />} />
-          <Route path="account-settings" element={<AccountSettings />} />
+        <Route element={<Layout />}>
+          <Route
+            path="/generate-idea-choose-blogs"
+            element={<GenerateIdeaChooseBlogs />}
+          />
+          <Route path="/generate-idea" element={<GenerateIdea />} />
+          <Route path="/saved-ideas" element={<SavedIdeas />} />
+          <Route path="/upgrade-account" element={<UpgradeAccount />} />
+          <Route path="/account-settings" element={<AccountSettings />} />
         </Route>
       </Routes>
     </BrowserRouter>

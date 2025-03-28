@@ -26,7 +26,7 @@ export default function Sidebar() {
     <>
       {/* Hamburger Menu Button */}
       <button
-        className="fixed top-4 right-4 z-50 rounded-lg bg-white p-2 shadow-md md:hidden"
+        className="fixed top-4 right-4 z-50 rounded-lg bg-white p-2 shadow-md lg:hidden"
         onClick={toggleMenu}
       >
         {isMenuOpen ? (
@@ -43,12 +43,13 @@ export default function Sidebar() {
       )}
 
       {/* Sidebar */}
+
       <aside
         className={`${
           isMenuOpen
             ? 'bg-base-100 translate-x-0'
-            : 'bg-secondary-light -translate-x-full'
-        } text-primary md:bg-secondary-light fixed top-0 left-0 z-40 h-full w-60 transform transition-transform duration-300 md:relative md:block md:translate-x-0`}
+            : 'bg-secondary-light -translate-x-full md:-translate-x-full'
+        } text-primary md:bg-secondary-light fixed top-0 left-0 z-40 h-full w-60 transform transition-transform duration-300 lg:relative lg:block lg:translate-x-0`}
       >
         <div className="space-y-6 p-4">
           <div className="flex items-center space-x-1">
@@ -105,7 +106,7 @@ export default function Sidebar() {
               <span>Generate Ideas</span>
             </NavLink>
             <NavLink
-              to="/generate-idea-choose-blogs/saved-ideas"
+              to="/saved-ideas"
               className={({ isActive }) =>
                 `mt-2 flex items-center space-x-3 rounded-lg p-2 ${
                   isActive
@@ -118,7 +119,7 @@ export default function Sidebar() {
               <span>Saved Ideas</span>
             </NavLink>
             <NavLink
-              to="/generate-idea-choose-blogs/upgrade-account"
+              to="/upgrade-account"
               className={({ isActive }) =>
                 `mt-2 flex items-center space-x-3 rounded-lg p-2 ${
                   isActive
@@ -134,7 +135,7 @@ export default function Sidebar() {
         </div>
 
         <div className="h-32"></div>
-        {location.pathname !== '/generate-idea-choose-blogs/generate-idea' && (
+        {location.pathname !== '/generate-idea' && (
           <ProgressBox progress={progress} />
         )}
 
@@ -147,7 +148,7 @@ export default function Sidebar() {
               <span>Need Help?</span>
             </div>
             <NavLink
-              to="/generate-idea-choose-blogs/account-settings"
+              to="/account-settings"
               className={({ isActive }) =>
                 `mt-2 flex items-center space-x-3 rounded-lg p-2 ${
                   isActive

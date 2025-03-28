@@ -17,7 +17,7 @@ export default function SavedIdeas() {
       <main className="flex-1 p-6">
         <h1 className="text-secondary mb-6 text-4xl font-bold">Saved Ideas</h1>
 
-        <div className="mb-8 max-h-96 w-full max-w-4xl rounded-2xl bg-white p-10 shadow-lg">
+        <div className="mb-8 w-full max-w-4xl rounded-2xl bg-white p-10 shadow-lg">
           <h2 className="text-lg leading-6 font-semibold text-black">
             Find all your generated ideas
           </h2>
