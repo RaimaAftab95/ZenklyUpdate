@@ -1,16 +1,14 @@
-import Sidebar from '@components/Sidebar';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 
 export default function UpgradeAccount() {
   return (
     <div className="flex min-h-screen">
-      <Sidebar />
       <main className="flex-1 p-6">
         <h1 className="text-secondary mb-6 text-4xl font-bold">
           Choose a plan to get started
         </h1>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-3">
           {[...Array(3)].map((_, colIndex) => (
             <div
               key={colIndex}

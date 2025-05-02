@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import ProgressBox from '../components/ProgressBox';
 import {
   BookmarkIcon,
@@ -26,7 +26,7 @@ export default function Sidebar() {
     <>
       {/* Hamburger Menu Button */}
       <button
-        className="absolute top-4 left-4 z-50 block md:hidden"
+        className="fixed top-4 right-4 z-50 rounded-lg bg-white p-2 shadow-md lg:hidden"
         onClick={toggleMenu}
       >
         {isMenuOpen ? (
@@ -35,14 +35,21 @@ export default function Sidebar() {
           <Bars3Icon className="text-primary h-6 w-6" />
         )}
       </button>
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black/50 lg:hidden"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
 
       {/* Sidebar */}
+
       <aside
         className={`${
           isMenuOpen
             ? 'bg-base-100 translate-x-0'
-            : 'bg-secondary-light -translate-x-full'
-        } text-primary md:bg-secondary-light fixed top-0 left-0 z-40 h-full w-60 transform transition-transform duration-300 md:relative md:block md:translate-x-0`}
+            : 'bg-secondary-light -translate-x-full md:-translate-x-full'
+        } text-primary md:bg-secondary-light fixed top-0 left-0 z-40 h-full w-60 transform transition-transform duration-300 lg:relative lg:block lg:translate-x-0`}
       >
         <div className="space-y-6 p-4">
           <div className="flex items-center space-x-1">
@@ -85,22 +92,49 @@ export default function Sidebar() {
           {/* Menu Items */}
 
           <nav className="text-secondary text-sm leading-tight font-semibold tracking-normal">
-            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+            <NavLink
+              to="/generate-idea-choose-blogs"
+              className={({ isActive }) =>
+                `flex items-center space-x-3 rounded-lg p-2 ${
+                  isActive
+                    ? 'text-primary bg-primary-content'
+                    : 'hover:bg-base-100'
+                }`
+              }
+            >
               <SparklesIcon className="h-5 w-5" />
               <span>Generate Ideas</span>
-            </div>
-            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+            </NavLink>
+            <NavLink
+              to="/saved-ideas"
+              className={({ isActive }) =>
+                `mt-2 flex items-center space-x-3 rounded-lg p-2 ${
+                  isActive
+                    ? 'bg-primary-content text-primary'
+                    : 'hover:bg-base-100'
+                }`
+              }
+            >
               <BookmarkIcon className="h-5 w-5" />
               <span>Saved Ideas</span>
-            </div>
-            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+            </NavLink>
+            <NavLink
+              to="/upgrade-account"
+              className={({ isActive }) =>
+                `mt-2 flex items-center space-x-3 rounded-lg p-2 ${
+                  isActive
+                    ? 'bg-primary-content text-primary'
+                    : 'hover:bg-base-100'
+                }`
+              }
+            >
               <ArrowUpCircleIcon className="h-5 w-5" />
               <span>Upgrade Account</span>
-            </div>
+            </NavLink>
           </nav>
         </div>
 
-        <div className="h-52"></div>
+        <div className="h-32"></div>
         {location.pathname !== '/generate-idea' && (
           <ProgressBox progress={progress} />
         )}
@@ -113,14 +147,26 @@ export default function Sidebar() {
               <QuestionMarkCircleIcon className="h-5 w-5" />
               <span>Need Help?</span>
             </div>
-            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+            <NavLink
+              to="/account-settings"
+              className={({ isActive }) =>
+                `mt-2 flex items-center space-x-3 rounded-lg p-2 ${
+                  isActive
+                    ? 'bg-primary-content text-primary'
+                    : 'hover:bg-base-100'
+                }`
+              }
+            >
               <UserIcon className="h-5 w-5" />
               <span>Account Settings</span>
-            </div>
-            <div className="hover:bg-secondary-light sm:hover:bg-primary-light flex cursor-pointer items-center space-x-3 rounded-lg p-2">
+            </NavLink>
+            <NavLink
+              to="/"
+              className="hover:bg-secondary-light sm:hover:bg-primary-light mt-2 flex cursor-pointer items-center space-x-3 rounded-lg p-2"
+            >
               <ArrowRightStartOnRectangleIcon className="h-5 w-5" />
               <span>Sign Out</span>
-            </div>
+            </NavLink>
           </nav>
         </div>
       </aside>

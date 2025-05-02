@@ -1,6 +1,6 @@
-import Sidebar from '@components/Sidebar';
 import { PlusCircleIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function AccountSettings() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -10,25 +10,28 @@ export default function AccountSettings() {
   };
 
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
+    <div>
+      {/*<div className="flex min-h-screen"> */}
       <main className="flex-1 p-10">
         <div className="mb-4 flex w-full max-w-4xl flex-col">
           <div className="flex w-full justify-end pr-0 md:pr-16">
-            <button
-              className="rounded-lg border p-2 text-sm leading-5"
-              style={{ borderColor: '#C2410C', color: '#C2410C' }}
-            >
-              Sign Out
-            </button>
+            <Link to="/signup">
+              <button
+                className="rounded-lg border p-2 text-sm leading-5"
+                style={{ borderColor: '#C2410C', color: '#C2410C' }}
+              >
+                Sign Out
+              </button>
+            </Link>
           </div>
-          <h1 className="text-secondary mt-2 text-4xl font-bold">
+          <h1 className="text-secondary mt-2 text-3xl font-bold sm:text-4xl">
             Account Settings
           </h1>
         </div>
 
         {/* Main Content*/}
-        <div className="text-secondary grid w-full max-w-4xl grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
+
+        <div className="block gap-4 space-y-4 lg:grid lg:grid-cols-2 lg:space-y-0">
           {/* User*/}
           <div
             className="w-full rounded-2xl border bg-white p-4 shadow-lg"
@@ -169,7 +172,7 @@ export default function AccountSettings() {
                     <img
                       src="/images/cd-icon-image.png"
                       alt="Dropdown Icon"
-                      className="h- w-4"
+                      className="h-4 w-4"
                     />
                     <span>Content Drips</span>
                     <i

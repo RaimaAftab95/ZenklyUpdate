@@ -1,5 +1,6 @@
-import Sidebar from '@components/Sidebar';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import {
   BookmarkIcon,
   SparklesIcon,
@@ -8,6 +9,10 @@ import {
 } from '@heroicons/react/24/outline';
 
 export default function GenerateIdeaChooseBlogs() {
+  const navigate = useNavigate();
+  const handleGenerate = () => {
+    navigate('/generate-idea');
+  };
   const [selectedBlogs, setSelectedBlogs] = useState([]);
 
   const toggleSelection = (index) => {
@@ -22,7 +27,6 @@ export default function GenerateIdeaChooseBlogs() {
 
   return (
     <div className="flex min-h-screen">
-      <Sidebar />
       <main className="flex-1 p-6">
         <h1 className="text-secondary mb-6 text-4xl font-bold">
           Generate Ideas
@@ -80,10 +84,13 @@ export default function GenerateIdeaChooseBlogs() {
                 className="focus:border-primary mt-4 w-2/3 rounded-lg border border-gray-300 p-2 focus:outline-none"
               />
 
-              <div className="bg-secondary hover:bg-primary mt-6 inline-flex cursor-pointer items-center space-x-3 rounded-lg px-4 py-2 text-white transition">
+              <button
+                onClick={handleGenerate}
+                className="bg-secondary hover:bg-primary mt-6 inline-flex cursor-pointer items-center space-x-3 rounded-lg px-4 py-2 text-white transition"
+              >
                 <SparklesIcon className="h-5 w-5" />
                 <span className="leading-5">Generate Ideas</span>
-              </div>
+              </button>
             </div>
 
             <div className="hidden border-l border-gray-300 md:block"></div>

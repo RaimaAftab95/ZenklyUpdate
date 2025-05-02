@@ -1,4 +1,3 @@
-import Sidebar from '@components/Sidebar';
 import { TrashIcon, DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 import { CheckCircleIcon as CheckCircleIconOutline } from '@heroicons/react/24/outline';
 import { CheckCircleIcon as CheckCircleIconSolid } from '@heroicons/react/24/solid';
@@ -15,11 +14,10 @@ export default function SavedIdeas() {
 
   return (
     <div className="flex min-h-screen">
-      <Sidebar />
       <main className="flex-1 p-6">
         <h1 className="text-secondary mb-6 text-4xl font-bold">Saved Ideas</h1>
 
-        <div className="mb-8 max-h-96 w-full max-w-4xl rounded-2xl bg-white p-10 shadow-lg">
+        <div className="mb-8 w-full max-w-4xl rounded-2xl bg-white p-10 shadow-lg">
           <h2 className="text-lg leading-6 font-semibold text-black">
             Find all your generated ideas
           </h2>
