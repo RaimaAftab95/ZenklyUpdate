@@ -65,7 +65,7 @@ Zenkly/
 ├── postcss.config.js
 ├── readme.md
 └── vite.config.js
-
+```
 
 ---
 
@@ -105,3 +105,5 @@ Zenkly/
 git clone https://github.com/RaimaAftab95/ZenklyUpdate.git
 cd ZenklyUpdate
 npm install
+
+---
