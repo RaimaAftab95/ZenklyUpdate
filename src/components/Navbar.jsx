@@ -27,9 +27,9 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { to: '/', label: 'Home' },
-    { to: '/features', label: 'Features' },
-    { to: '/', label: 'Login' }
+    { id: 1, to: '/', label: 'Home' },
+    { id: 2, to: '/features', label: 'Features' },
+    { id: 3, to: '/', label: 'Login' }
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Navbar() {
       <div className="hidden flex-none md:flex">
         <ul className="flex items-center gap-4">
           {navItems.map((item) => (
-            <NavItem key={item.to} {...item} />
+            <NavItem key={item.id} {...item} />
           ))}
           <li>
             <SignUpButton />
@@ -76,7 +76,7 @@ export default function Navbar() {
       >
         <ul className="bg-base-100 rounded-b-box w-full space-y-2.5 p-4 shadow-lg">
           {navItems.map((item) => (
-            <NavItem key={item.to} {...item} />
+            <NavItem key={item.id} {...item} />
           ))}
           <li>
             <SignUpButton />
